@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_140944) do
+ActiveRecord::Schema.define(version: 2018_05_21_150103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "catches", force: :cascade do |t|
+    t.bigint "specie_id"
+    t.string "photo"
+    t.integer "size"
+    t.float "weight"
+    t.string "date"
+    t.bigint "technic_id"
+    t.bigint "user_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["specie_id"], name: "index_catches_on_specie_id"
+    t.index ["technic_id"], name: "index_catches_on_technic_id"
+    t.index ["user_id"], name: "index_catches_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "catch_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["catch_id"], name: "index_reviews_on_catch_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.string "picture_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "technics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +67,15 @@ ActiveRecord::Schema.define(version: 2018_05_21_140944) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pseudo"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "catches", "species", column: "specie_id"
+  add_foreign_key "catches", "technics"
+  add_foreign_key "catches", "users"
+  add_foreign_key "reviews", "catches"
+  add_foreign_key "reviews", "users"
 end
