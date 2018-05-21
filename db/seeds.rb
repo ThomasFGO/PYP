@@ -1,7 +1,173 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Cleaning database...'
+Catch.destroy_all
+User.destroy_all
+
+croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres")
+
+
+puts 'Creating catches...'
+catches_attributes = [
+  {
+    user: croustibat,
+    specie: truite arc en ciel,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/truite_arc_ciel_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: barbeau,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/barbeau_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: blackbass,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/blackbass_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: breme,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/breme_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: brochet,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/brochet_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: carpe,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/carpe_commune_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: chevesne,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/imagesch/chevesne_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: gardon,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/gardon_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: saumon de fontaine,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/saumon_de_fontaine.jpeg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: perche,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/perche_commune_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: rotengle,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/rotengle_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: sandre,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/sandre_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: silure,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/silure_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: tanche,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/tanche_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: truite fario,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/truite_fario_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  },
+  {
+    user: croustibat,
+    specie: vandoise,
+    size: 56,
+    weight: 2.1,
+    date:21/05/2018,
+    photo: "../assets/images/vandoise_poisson.jpg",
+    description: "The French Trout",
+    technic: "Mouche noyée",
+  }
+]
+Catch.create!(catches_attributes)
+puts 'Finished!'
