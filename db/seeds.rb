@@ -129,7 +129,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "https://www.aquaportail.com/pictures1112/anemone-clown_1322913402-poisson-rouge-rouge.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -139,7 +139,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/barbeau_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -149,7 +149,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/blackbass_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -159,7 +159,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/breme_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -169,7 +169,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/brochet_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -179,7 +179,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/carpe_commune_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -189,7 +189,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/imagesch/chevesne_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -199,7 +199,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/gardon_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -209,7 +209,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/saumon_de_fontaine.jpeg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -219,7 +219,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/perche_commune_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -229,7 +229,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/rotengle_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -239,7 +239,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/sandre_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -249,7 +249,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/silure_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -259,7 +259,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/tanche_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -269,7 +269,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date:Date.new(2018,05,15),
-    photo: "../app/assets/images/truite_fario_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   },
@@ -279,7 +279,7 @@ catches_attributes = [
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
-    photo: "../app/assets/images/vandoise_poisson.jpg",
+    remote_photo_url: "http://www.narinda-sport-fishing.com/images/stories/peche-au-gros/peche/peche-au-gros-sud-nosybe.jpg",
     description: "The French Trout",
     technic: Technic.order("random()").first
   }
