@@ -22,3 +22,8 @@ a {
 .tab_content_map {
  width: 100vh;
 }
+
+.tab-content {
+  flex: 1;
+  overflow: scroll;
+}
