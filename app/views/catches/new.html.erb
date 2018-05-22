@@ -1,7 +1,8 @@
 <h2>Nouvelle prise</h2>
+<%= link_to 'Retour', root_path, class: "btn btn-danger" %>
 <%= render 'form' %>
 <br>
-<%= link_to 'Retour', root_path, class: "btn btn-danger" %>
+
 
 <% content_for(:after_js) do  %>
   <script>
@@ -22,3 +23,5 @@
     });
   </script>
 <% end %>
+
+
