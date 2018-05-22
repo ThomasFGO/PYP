@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2018_05_22_102101) do
     t.string "photo"
     t.integer "size"
     t.float "weight"
-    t.string "date"
     t.bigint "technic_id"
     t.bigint "user_id"
     t.text "description"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_05_22_102101) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.date "date"
     t.index ["specie_id"], name: "index_catches_on_specie_id"
     t.index ["technic_id"], name: "index_catches_on_technic_id"
     t.index ["user_id"], name: "index_catches_on_user_id"
