@@ -1,23 +1,19 @@
 <div class="container">
   <div class="cards-container">
     <div class="row">
-      <% @catches.each do |catch| %>
-        <div class="col-xs-12 col-sm-6 col-md-6">
-          <div class="card">
-            <div class="card-description">
-              <%#= cl_image_tag catch.photo %>
-              <h4><%= catch.specie.name %></h4>
-              <h6><%= catch.technic.name %></h6>
-              <h6>Size: <%= catch.size %></h6>
-              <h6>Weight: <%= catch.weight %></h6>
-              <br> <br>
-              <div class="see-more text-center">
-              <%=link_to "View details", catch_path(catch), class: "btn btn-success btn-sm" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+     <% @catches.each do |catch| %>
+       <div class="col-xs-12 col-sm-6 col-md-6">
+           <div class="card">
+             <div class="card-description">
+               <%= cl_image_tag catch.photo %>
+               <h4><strong><%= catch.specie.name %></strong></h4>
+               <h5><%= catch.technic.name %></h5>
+               <h6>SIZE: <%= catch.size %>cm | WEIGHT: <%= catch.weight %>kg</h6>
+             </div>
+         </div>
+       </div>
+     <% end %>
   </div>
+</div>
   <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
 </div>

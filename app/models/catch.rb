@@ -1,4 +1,5 @@
 class Catch < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :specie
   belongs_to :technic
   belongs_to :user
