@@ -1,18 +1,17 @@
-<div class="container">
+<div class="main-container">
   <div class="cards-container">
     <div class="row">
      <% @catches.each do |catch| %>
        <div class="col-xs-12 col-sm-6 col-md-6">
            <div class="card">
              <div class="card-description">
-               <%#= cl_image_tag catch.photo %>
-               <h4><%#= catch.specie_id.name %></h4>
-               <h6><%#= catch.technic_id.name %></h6>
-               <h6>Size: <%= catch.size %></h6>
-               <h6>Weight: <%= catch.weight %></h6>
+               <%= cl_image_tag catch.photo %>
+               <h4><%= catch.name %></h4>
+               <h6><%= catch.model %></h6>
+               <h6><%= catch.description %></h6>
                <br> <br>
                <div class="see-more text-center">
-                <%=link_to "View details", catch_path(catch), class: "btn btn-success btn-sm" %>
+                <%=link_to "See more", catch_path(catch), class: "btn btn-success" %>
                </div>
              </div>
          </div>
@@ -20,3 +19,4 @@
      <% end %>
      </div>
   </div>
+</div>
