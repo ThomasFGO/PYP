@@ -8,8 +8,7 @@ class CatchesController < ApplicationController
       {
         lat: catch.latitude,
         lng: catch.longitude
-      #,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        # infoWindow: { content: render_to_string(partial: "", locals: { catch: catch }) }
       }
     end
   end
@@ -19,11 +18,7 @@ class CatchesController < ApplicationController
   end
 
   def create
-    @catch = Catch.new(catch_params)
-    @catch.user = current_user
-
     @catch = current_user.catches.new(catch_params)
-    #get user location (lat, lng)
     #create the marker
     if @catch.save
       redirect_to root_path
