@@ -20,7 +20,6 @@ class CatchesController < ApplicationController
   end
 
   def create
-    byebug
     @catch = Catch.new(catch_params)
     @catch.user = current_user
 
