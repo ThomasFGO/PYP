@@ -1,4 +1,6 @@
 puts 'Cleaning database...'
+Specie.destroy_all
+Technic.destroy_all
 Catch.destroy_all
 User.destroy_all
 
@@ -123,13 +125,13 @@ puts 'Creating catches...'
 catches_attributes = [
   {
     user: croustibat,
-    specie_id: 1,
+    specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
     photo: "../assets/images/truite_arc_ciel_poisson.jpg",
     description: "The French Trout",
-    technic_id: 2
+    technic: Technic.order("random()").first
   },
   {
     user: croustibat,
