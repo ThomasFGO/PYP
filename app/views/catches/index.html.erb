@@ -6,8 +6,8 @@
            <div class="card">
              <div class="card-description">
                <%#= cl_image_tag catch.photo %>
-               <h4><%#= catch.specie_id.name %></h4>
-               <h6><%#= catch.technic_id.name %></h6>
+               <h4><%= catch.specie.name %></h4>
+               <h6><%= catch.technic.name %></h6>
                <h6>Size: <%= catch.size %></h6>
                <h6>Weight: <%= catch.weight %></h6>
                <br> <br>
