@@ -1,11 +1,10 @@
 class CatchesController < ApplicationController
 
   def index
-    @catches = Catch.all
+    @catches = current_user.catches.all
+    @catches_markers = @catches.where.not(latitude: nil, longitude: nil)
 
-    @catches = Catch.where.not(latitude: nil, longitude: nil)
-
-    @markers = @catches.map do |flat|
+    @markers = @catches_markers.map do |catch|
       {
         lat: catch.latitude,
         lng: catch.longitude
