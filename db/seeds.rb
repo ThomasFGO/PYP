@@ -121,8 +121,8 @@ puts 'Finished!'
 
 croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres", pseudo: "Crousti")
 cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", pseudo: "Cousteau")
-maxou = User.create!(email: "maxou@gmail.com", password: "maxouxou", pseudo: "Max le conquérant")
-osque = User.create!(email: "osque@gmail.com", password: "oscarito", pseudo: "Oscaritoto")
+maxou = User.create!(email: "maxou@gmail.com", password: "maxouxou", pseudo: "Maxikikirikiki")
+osque = User.create!(email: "osque@gmail.com", password: "oscarito", pseudo: "Oscaritatitato")
 tomimi = User.create!(email: "tomimi@gmail.com", password: "tomimimimi", pseudo: "Tomimitromimi")
 
 
