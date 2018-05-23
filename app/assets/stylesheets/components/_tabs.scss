@@ -1,17 +1,22 @@
-.tab_general a {
-  width: 190px;
-  height: 40px;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  border-radius: 20px;
-  text-align: center;
-}
-
 .tab_general {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tab_general a {
+  width: 190px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: #33cccc;
+}
+
+.nav li  {
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 .tab_content_list {
@@ -26,4 +31,8 @@
 .tab-content {
   flex: 1;
   overflow: scroll;
+}
+
+#pills-tab {
+  display: flex;
 }
