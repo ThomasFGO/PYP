@@ -7,6 +7,7 @@
   <%= f.input :description, label: "Détails", placeholder: "Détails de la prise"%>
   <%= f.input :latitude, as: :hidden %>
   <%= f.input :longitude, as: :hidden %>
+  <%= f.input :created_at, as: :hidden %>
   <div class="catch-map-preview"></div>
   <br>
   <%= f.button :submit, "Valider", class: "btn btn-primary"  %>
