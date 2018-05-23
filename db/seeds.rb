@@ -119,6 +119,7 @@ Technic.create!(technics_attributes)
 puts 'Finished!'
 
 croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres")
+cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau")
 
 
 puts 'Creating catches...'
@@ -280,7 +281,7 @@ catches_attributes = [
     longitude: 0.15531
   },
   {
-    user: croustibat,
+    user: cousteau,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -292,7 +293,7 @@ catches_attributes = [
     longitude: 0.1541
   },
   {
-    user: croustibat,
+    user: cousteau,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -304,7 +305,7 @@ catches_attributes = [
     longitude: 0.15234
   },
   {
-    user: croustibat,
+    user: cousteau,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,

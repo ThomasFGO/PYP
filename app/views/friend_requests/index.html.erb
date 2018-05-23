@@ -1,0 +1,8 @@
+<h1>Friends requests:</h1>
+<h1><%= @incoming.each do |ir| %></h1>
+<h3>From: <%= ir.user.email %></h3>
+<%= link_to "Accept the request", friend_request_path(ir), method: :patch %>
+<%end%>
+
+<h1>My friend requests waiting:</h1>
+<h1><%= @outgoing.all %></h1>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :friends, only: [:index, :destroy]
+  resources :friend_requests, only: [:index, :create, :update, :destroy]
   root to: 'catches#index'
   devise_for :users
   resources :catches, only: [:show, :new, :create, :update, :edit] do
