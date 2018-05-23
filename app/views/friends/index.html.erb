@@ -3,17 +3,28 @@
   <%= f.submit %>
 <%end%>
 
+<br>
 
-<h1>My friends</h1>
-<h1><%= @friends.each do |friend| %></h1>
-<h2><%= friend.email %></h2>
-<%= link_to "Delete this friend", friend_path(friend), method: :delete,
+<%= link_to "See my friends requests", friend_requests_path %>
+
+<br>
+
+
+<h2> <strong> My friends</strong></h1>
+<% @friends.each do |friend| %>
+<ul>
+  <li>
+    <h2><%= friend.pseudo %></h2>
+      <%= link_to "Delete this friend", friend_path(friend), method: :delete,
       data: { confirm: "Are you sure you want to delete this friend ?" }  %>
+  </li>
+</ul>
 <%end%>
 
 
-<%#= link_to "Add new friends", friend_requests_path, method: :post,
-      data: { confirm: "The friend request has been sent to your friend, please wait for him to accept the request" }  %>
+
+
+
 
 
 
