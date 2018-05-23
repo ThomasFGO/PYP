@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">Ajouter un ami</a>
@@ -12,3 +14,5 @@
     <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
   </div>
 </div>
+
+<% end %>
