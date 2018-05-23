@@ -7,8 +7,9 @@ class CatchesController < ApplicationController
     @markers = @catches_markers.map do |catch|
       {
         lat: catch.latitude,
-        lng: catch.longitude
-        # infoWindow: { content: render_to_string(partial: "", locals: { catch: catch }) }
+        lng: catch.longitude,
+        icon: ActionController::Base.helpers.asset_path("fish_marker_3.svg"),
+        infoWindow: { content: render_to_string(partial: "/catches/marker_content", locals: { catch: catch }) }
       }
     end
   end
