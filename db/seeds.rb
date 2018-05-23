@@ -118,8 +118,10 @@ technics_attributes = [
 Technic.create!(technics_attributes)
 puts 'Finished!'
 
-croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres")
-cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau")
+
+croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres", pseudo: "Crousti")
+cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", pseudo: "Cousteau")
+
 
 
 puts 'Creating catches...'

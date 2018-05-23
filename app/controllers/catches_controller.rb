@@ -27,9 +27,13 @@ class CatchesController < ApplicationController
     end
   end
 
+  def show
+    @catch = Catch.find(params[:id])
+  end
+
   private
 
   def catch_params
-    params.require(:catch).permit(:specie_id,:photo, :description, :size, :weight, :date, :technic_id, :latitude, :longitude )
+    params.require(:catch).permit(:specie_id, :photo, :description, :size, :weight, :date, :technic_id, :latitude, :longitude, :user_id)
   end
 end

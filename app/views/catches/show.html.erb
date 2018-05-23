@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    <div class="profile-img">
+      <div class= "avatar"> <%= cl_image_tag @catch.user.photo %> </div>
+    </div>
+    <div class="profile-info">
+      <h4 class="specie"><strong> <%= @catch.user.pseudo %> </strong></h4>
+      <br>
+      <h5 class="technic"><%= @catch.specie.name %></h5>
+    </div>
+    <div class="time">
+      <%= @catch.date.strftime("%d/%m/%Y") %>
+    </div>
+  </div>
+  <div class="content-img">
+    <%= cl_image_tag @catch.photo %>
+  </div>
+  <div class="card-footer">
+    <div class="description">
+    </div>
+    <div class="picto footer-links">
+      <ul class="list-inline">
+        <li> <%= @catch.technic.name %> </li>
+        <li> <%= @catch.size %> cm </li>
+        <li> <%= @catch.weight %> kg </li>
+        <li> Latitude:  <%= @catch.latitude %>, longitude:  <%= @catch.longitude %> </li>
+      </ul>
+      <%= @catch.description %>
+    </div>
+  </div>
+  <div>
+  <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@catch.latitude%>,<%=@catch.longitude%>&zoom=15&size=373x279&maptype=roadmap&markers=color:red%7C%7C<%=@catch.latitude%>,<%=@catch.longitude%>&markers=size:tiny%7Ccolor:green%7CDelta+Junction,AK\
+&markers=size:mid%7Ccolor:0xFFFF00%7Clabel:C%7CTok,AK">
+</div>
+</div>
+<br>
+<br>
