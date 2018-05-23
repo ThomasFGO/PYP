@@ -27,7 +27,7 @@ class CatchesController < ApplicationController
     end
   end
 
-   def show
+  def show
     @catch = Catch.find(params[:id])
   end
 
