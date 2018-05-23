@@ -1,27 +1,28 @@
-<h2>Nouvelle prise</h2>
-<%= link_to 'Retour', root_path, class: "btn btn-danger" %>
-<%= render 'form' %>
-<br>
+<div class="container">
+  <h2>Nouvelle prise</h2>
+  <%= render 'form' %>
+  <br>
+  <% content_for(:after_js) do  %>
+    <script>
+      $(document).ready(function(){
+        navigator.geolocation.getCurrentPosition(function(location) {
+          var lat = location.coords.latitude;
+          var lng = location.coords.longitude;
+          var latlng = lat + "," + lng;
+          console.log(latlng);
+          src_img = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlng + "&zoom&size=350x200&maptype=roadmap&markers=color:red%7C" + latlng + "&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>"
+          console.log(src_img);
+          $img = $('<img>').attr('src', src_img);
+          $('.catch-map-preview').html($img);
 
-
-<% content_for(:after_js) do  %>
-  <script>
-    $(document).ready(function(){
-      navigator.geolocation.getCurrentPosition(function(location) {
-        var lat = location.coords.latitude;
-        var lng = location.coords.longitude;
-        var latlng = lat + "," + lng;
-        console.log(latlng);
-        src_img = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlng + "&zoom&size=600x300&maptype=roadmap&markers=color:red%7C" + latlng + "&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>"
-        console.log(src_img);
-        $img = $('<img>').attr('src', src_img);
-        $('.catch-map-preview').html($img);
-
-        $('#catch_latitude').val(lat);
-        $('#catch_longitude').val(lng);
+          $('#catch_latitude').val(lat);
+          $('#catch_longitude').val(lng);
+        });
       });
-    });
-  </script>
-<% end %>
+    </script>
+  <% end %>
+</div>
+<br>
+<br>
 
 

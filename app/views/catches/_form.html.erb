@@ -1,10 +1,14 @@
 <%= simple_form_for(@catch) do |f| %>
-  <%= f.input :specie, label: "Espèce" %>
+  <%= f.association :specie, label: "Espèce", include_blank: "Choisir une espèce" %>
   <%= f.input :photo, label: "Photo" %>
   <%= f.input :size, label: "Taille", placeholder: "cm" %>
   <%= f.input :weight, label: "Poids", placeholder: "kg" %>
+  <%= f.association :technic, label: "Technique", include_blank: "Choisir une technique"%>
+  <%= f.input :description, label: "Détails", placeholder: "Détails de la prise"%>
   <%= f.input :latitude, as: :hidden %>
   <%= f.input :longitude, as: :hidden %>
   <div class="catch-map-preview"></div>
+  <br>
   <%= f.button :submit, "Valider", class: "btn btn-primary"  %>
+  <%= link_to 'Retour', root_path, class: "btn btn-danger" %>
 <% end %>
