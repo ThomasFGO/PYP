@@ -6,7 +6,9 @@
   border-radius: 3px;
   overflow: auto;
   padding-bottom: 10px;
-
+  &:first-child {
+    margin-top: 0;
+  }
   .card-header {
 
     padding: 10px;
@@ -69,4 +71,4 @@
       font-size: 12px;
       padding-bottom: 15px;
     }
-  }
+}
