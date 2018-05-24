@@ -1,27 +1,36 @@
-<%= simple_form_for(@friend_request) do |f| %>
-  <%= f.input :email, label: "Add a friend with its email" %>
-  <%= f.submit %>
-<%end%>
+<div class="container">
+  <div class="friends">
 
-<br>
+    <%= simple_form_for(@friend_request) do |f| %>
+      <%= f.input :email, label: "Add a friend with its email" %>
+      <%= f.submit %>
+    <%end%>
 
-<%= link_to "See my friends requests", friend_requests_path %>
-<br>
-<%= link_to "Back to home", root_path %>
+    <br>
 
-<br>
+    <%= link_to "My friends requests", friend_requests_path %>
+    <br>
+    <%= link_to "Back to home", root_path %>
+
+    <br>
 
 
-<h2> <strong> My friends</strong></h1>
-<% @friends.each do |friend| %>
-<ul>
-  <li>
-    <h2><%= friend.pseudo %></h2>
-      <%= link_to "Delete this friend", friend_path(friend), method: :delete,
-      data: { confirm: "Are you sure you want to delete this friend ?" }  %>
-  </li>
-</ul>
-<%end%>
+    <h3 class="title"> <strong> MY FRIENDS</strong></h3>
+      <% @friends.each do |friend| %>
+        <div class="friendscards">
+          <div class="profile-img">
+            <img src='https://kitt.lewagon.com/placeholder/users/Pompidou33' class="avatar"/>
+          </div>
+            <div class="friendstext">
+              <h5><%= friend.pseudo %></h5>
+              <%= link_to "Delete this friend", friend_path(friend), method: :delete,
+              data: { confirm: "Are you sure you want to delete this friend ?" }  %>
+            </div>
+        </div>
+      <%end%>
+
+  </div>
+</div>
 
 
 
