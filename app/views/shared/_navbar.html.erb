@@ -2,17 +2,25 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%= link_to "My friends", friends_path %>
   <%= link_to "My friend requests", friend_requests_path %>
-  <%= link_to "My catches", catches_path %>
   <a href="#">About us</a>
+  <%= link_to "Edit my profile", friend_requests_path %>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 </div>
 
 <div class="navbar">
-  <div id="main">
+
     <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
-  </div>
+    <div>
+      <%= link_to "Feed", root_path, class: "feed-navbar" %>
+    </div>
+    <div>
+      <%= link_to "Friends", friends_path, class: "friends-navbar" %>
+    </div>
+    <div>
+      <%= link_to current_user.pseudo, catches_path, class: "user-navbar" %>
+    </div>
+
 </div>
 
 <% end %>
