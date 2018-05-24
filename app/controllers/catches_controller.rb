@@ -1,7 +1,7 @@
 class CatchesController < ApplicationController
 
   def index
-    @catches = current_user.catches.all
+    @catches = current_user.catches.includes(:specie, :technic)
     @catches_markers = @catches.where.not(latitude: nil, longitude: nil)
 
     @markers = @catches_markers.map do |catch|

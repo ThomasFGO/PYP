@@ -12,43 +12,7 @@
 
 <div class="tab-content" id="tab_content_list">
   <div class="tab-pane" id="catches-list" role="tabpanel" aria-labelledby="pills-home-tab">
-    <% @catches.each do |catch| %>
-      <div class="card">
-        <div class="card-header">
-          <div class="profile-img">
-            <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar"/>
-          </div>
-          <div class="profile-info">
-            <h4 class="specie"><strong> <%= catch.user.pseudo %> </strong></h4>
-            <h5 class="technic"><%= catch.specie.name %></h5>
-          </div>
-          <div class="time">
-            <%= catch.created_at.strftime("%d/%m/%Y") %>
-          </div>
-        </div>
-        <div class="content-img">
-          <%= cl_image_tag catch.photo %>
-        </div>
-        <div class="card-footer">
-          <div class="description">
-            <span class="username">bobby234</span> <p>Magnifique !</p>
-            <span class="username">jack456</span> <p>Chanmé ma gueule !</p>
-          </div>
-          <div class="picto footer-links">
-            <ul class="list-inline">
-              <li><a href=""><i class="fa fa-heart"></i></a></li>
-              <li><a href=""><i class="fa fa-share"></i></a></li>
-              <li><a href=""><i class="fa fa-star"></i></a></li>
-            </ul>
-          </div>
-          <div class="likes">
-            21 likes
-          </div>
-          <%=link_to "See more", catch_path(catch)%>
-        </div>
-
-      </div>
-    <% end %>
+    <%= render collection: @catches, partial: "catches/catch" %>
   </div>
 
   <div class="tab-pane active" id="catches-map" role="tabpanel" aria-labelledby="pills-profile-tab" style="min-height: 100vh;">
