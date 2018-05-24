@@ -3,6 +3,8 @@
   <div class="card-container">
 
     <%= image_tag 'test_logo_6.png', class: "logo" %>
+ <div class="inside-form">
+
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -10,9 +12,10 @@
             <%= f.input :password, required: false, :placeholder => "Password", label: false, input_html: { class: "form-control" } %>
     </div>
     <div class="form-actions">
-        <%= f.button :submit, "Log in", class: "btn btn-primary btn-block" %>
+        <%= f.button :submit, "Log in", class:"login-btn" %>
       </div>
     <% end %>
+    </div>
 
     <div class="signup">
       <%= render "devise/shared/links" %>
