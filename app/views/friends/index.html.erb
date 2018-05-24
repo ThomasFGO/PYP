@@ -1,19 +1,23 @@
 <div class="container">
   <div class="friends">
 
-    <%= simple_form_for(@friend_request) do |f| %>
-      <%= f.input :email, label: "Add a friend with its email" %>
-      <%= f.submit %>
-    <%end%>
+      <h3 class="title"> <strong> ADD FRIENDS</strong></h3>
+      <div class="formcusto">
+        <%= simple_form_for(@friend_request) do |f| %>
+          <%= f.input :email, label: false, placeholder: "example@example.com", input_html: { class: "form-control" } %>
+          <%= f.button :submit, value: "Send friend request"%>
+        <%end%>
+       </div>
+       <br>
 
-    <br>
 
-    <%= link_to "My friends requests", friend_requests_path %>
-    <br>
-    <%= link_to "Back to home", root_path %>
-
-    <br>
-
+    <div class="friendscards">
+      <div class="friendstext">
+        <%= link_to "My friends requests", friend_requests_path %>
+        <br>
+        <%= link_to "Back to home", root_path %>
+      </div>
+    </div>
 
     <h3 class="title"> <strong> MY FRIENDS</strong></h3>
       <% @friends.each do |friend| %>
