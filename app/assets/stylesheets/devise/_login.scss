@@ -12,11 +12,11 @@ body .container-page{
   text-align: center;
   padding: 15px;
   border-radius: 5px;
-
+  padding-top: 80px;
 }
 
 .form-control {
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 
@@ -29,7 +29,8 @@ body .container-page{
 }
 
 .signup {
-  padding-top: 5px;
+  padding-top: 15px;
+
 }
 
 .logo {
@@ -38,4 +39,25 @@ body .container-page{
   align-items: center;
   width: 200px;
   padding-bottom: 20px;
+}
+
+.login-btn {
+  width: 250px;
+  color: white;
+  border: 2px solid white;
+  background: linear-gradient(to right, #000000, #434343);
+  border-radius: 10px;
+}
+.signup-btn {
+
+  color: white;
+  border: 2px solid white;
+  background-color: none;
+  border-radius: 10px;
+  padding: 5px 20px 5px 20px;
+}
+
+.inside-form {
+  display: flex;
+  justify-content: center;
 }
