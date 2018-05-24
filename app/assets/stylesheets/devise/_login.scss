@@ -61,3 +61,13 @@ body .container-page{
   display: flex;
   justify-content: center;
 }
+
+.inline-form {
+  display: flex;
+  padding: 1px;
+  margin: 0 -5px;
+}
+
+.form-item {
+  margin: 0 5px;
+}
