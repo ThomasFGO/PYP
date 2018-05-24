@@ -121,13 +121,15 @@ puts 'Finished!'
 
 croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres", pseudo: "Crousti")
 cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", pseudo: "Cousteau")
-
+maxou = User.create!(email: "maxou@gmail.com", password: "maxouxou", pseudo: "Maxikikirikiki")
+osque = User.create!(email: "osque@gmail.com", password: "oscarito", pseudo: "Oscaritatitato")
+tomimi = User.create!(email: "tomimi@gmail.com", password: "tomimimimi", pseudo: "Tomimitromimi")
 
 
 puts 'Creating catches...'
 catches_attributes = [
   {
-    user: croustibat,
+    user: osque,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -151,7 +153,7 @@ catches_attributes = [
     longitude: 0.10011
   },
   {
-    user: croustibat,
+    user: osque,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -163,7 +165,7 @@ catches_attributes = [
     longitude: 0.24371
   },
   {
-    user: croustibat,
+    user: tomimi,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -175,7 +177,7 @@ catches_attributes = [
     longitude: 0.10048
   },
   {
-    user: croustibat,
+    user: tomimi,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -283,7 +285,7 @@ catches_attributes = [
     longitude: 0.15531
   },
   {
-    user: cousteau,
+    user: maxou,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -295,7 +297,7 @@ catches_attributes = [
     longitude: 0.1541
   },
   {
-    user: cousteau,
+    user: maxou,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
