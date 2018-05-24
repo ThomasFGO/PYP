@@ -8,7 +8,9 @@
   <%= f.input :latitude, as: :hidden %>
   <%= f.input :longitude, as: :hidden %>
   <%= f.input :created_at, as: :hidden %>
-  <div class="catch-map-preview"></div>
+  <% if action_name == "new" %>
+    <div class="catch-map-preview"> </div>
+  <% end %>
   <br>
   <%= f.button :submit, "Valider", class: "btn btn-primary"  %>
   <%= link_to 'Retour', root_path, class: "btn btn-danger" %>
