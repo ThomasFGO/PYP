@@ -1,6 +1,19 @@
 <%= simple_form_for(@catch) do |f| %>
   <%= f.association :specie, label: "Espèce", include_blank: "Choisir une espèce" %>
-  <%= f.input :photo, label: "Photo" %>
+  <%= f.label :photo do %>
+    Photo
+    <br>
+
+    <span class="btn btn-primary">Add a picture</span>
+
+  <% end %>
+  <div class="hidden">
+    <%= f.input :photo, label: false %>
+  </div>
+  <div>
+  <img id="image-preview" src="#" alt="your image"
+    style="width: 100%; height: 100px; object-fit: contain; background: #AAA;" />
+  </div>
   <%= f.input :size, label: "Taille", placeholder: "cm" %>
   <%= f.input :weight, label: "Poids", placeholder: "kg" %>
   <%= f.association :technic, label: "Technique", include_blank: "Choisir une technique"%>
@@ -8,7 +21,9 @@
   <%= f.input :latitude, as: :hidden %>
   <%= f.input :longitude, as: :hidden %>
   <%= f.input :created_at, as: :hidden %>
-  <div class="catch-map-preview"></div>
+  <% if action_name == "new" %>
+    <div class="catch-map-preview"> </div>
+  <% end %>
   <br>
   <%= f.button :submit, "Valider", class: "btn btn-primary"  %>
   <%= link_to 'Retour', root_path, class: "btn btn-danger" %>

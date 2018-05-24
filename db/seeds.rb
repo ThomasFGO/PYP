@@ -4,6 +4,7 @@ Specie.destroy_all
 Technic.destroy_all
 User.destroy_all
 
+
 puts 'Creating species...'
 
 species_attributes = [
@@ -124,6 +125,15 @@ cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", pseud
 maxou = User.create!(email: "max@gmail.com", password: "maxpyp", pseudo: "Maxou")
 osque = User.create!(email: "osque@gmail.com", password: "osquepyp", pseudo: "Osque")
 tommy = User.create!(email: "tom@gmail.com", password: "tompyp", pseudo: "Tommy")
+Friendship.new(user: maxou, friend: osque).save
+Friendship.new(user: maxou, friend: tommy).save
+Friendship.new(user: tommy, friend: osque).save
+Friendship.new(user: maxou, friend: croustibat).save
+Friendship.new(user: osque, friend: croustibat).save
+Friendship.new(user: tommy, friend: croustibat).save
+Friendship.new(user: maxou, friend: cousteau).save
+
+
 
 
 puts 'Creating catches...'
