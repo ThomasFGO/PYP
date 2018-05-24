@@ -30,7 +30,7 @@
   </div>
   <div>
    <img class="static-map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@catch.latitude%>,<%= @catch.longitude %>&zoom=15&size=373x279&maptype=roadmap&markers=icon:https://i.imgur.com/07nU9eN.png%7C<%= @catch.latitude %>,<%= @catch.longitude %>&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>">
-  </div>   
+  </div>
   <div>
   <%=link_to "Edit", edit_catch_path(@catch)%>
    <%= link_to "Delete", catch_path(@catch), method: :delete,
