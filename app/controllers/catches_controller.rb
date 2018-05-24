@@ -8,7 +8,7 @@ class CatchesController < ApplicationController
       {
         lat: catch.latitude,
         lng: catch.longitude,
-        icon: ActionController::Base.helpers.asset_path("fish_marker_3.svg"),
+        icon: ActionController::Base.helpers.asset_path("fish_marker_11.png"),
         infoWindow: { content: render_to_string(partial: "/catches/marker_content", locals: { catch: catch }) }
       }
     end
