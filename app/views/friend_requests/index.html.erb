@@ -1,20 +1,37 @@
-<h3> <strong>Friends requests</strong> </h3>
-<%@incoming.each do |ir| %>
-<ul>
-  <li><h5><%= ir.user.email %></h5>
-  <%= link_to "Accept the request", friend_request_path(ir), method: :patch %>
-  </li>
-</ul>
+<div class="container">
+  <div class="friends">
+    <h3 class="title"> <strong>INVITATIONS</strong> </h3>
+    <% @incoming.each do |ir| %>
 
-<%end%>
+        <div class="friendscards">
 
-<h3> <strong>My friend requests waiting</strong> </h3>
-<h1><%@outgoing.each do |outr| %></h1>
-<ul>
-  <li><h5><%= outr.user.email %></h5></li>
-</ul>
-<%end%>
+            <div class="profile-img">
+                <img src='https://kitt.lewagon.com/placeholder/users/osque' class="avatar"/>
+            </div>
+            <div class="friendstext">
+              <h5><%= ir.user.email %></h5>
+              <%= link_to "Accept", friend_request_path(ir), method: :patch %>
+            </div>
 
-<br>
+        </div>
 
-<%=link_to "Back to my friends", friends_path %>
+    <%end%>
+
+    <h3 class="title"> <strong>PENDING REQUESTS</strong> </h3>
+    <% @outgoing.each do |outr| %>
+      <div class="friendscards">
+        <div class="profile-img">
+                <img src='https://kitt.lewagon.com/placeholder/users/MendyDihars' class="avatar"/>
+        </div>
+        <div class="friendstext">
+          <h5><%= outr.friend.email %></h5>
+        </div>
+      </div>
+    <%end%>
+
+    <br>
+
+    <%=link_to "Back to my friends", friends_path %>
+
+  </div>
+</div>
