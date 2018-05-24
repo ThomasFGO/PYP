@@ -1,16 +1,12 @@
 <% content_for(:body_class, "visible-plus-btn") %>
-
-<div class="tab_general">
-  <ul class="nav mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item active">
-      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#catches-map" role="tab" aria-controls="pills-profile" aria-selected="false">Map</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#catches-list" role="tab" aria-controls="pills-home" aria-selected="true">List</a>
-    </li>
-  </ul>
-</div>
-
+<ul class="pyp-tabs">
+  <li class="pyp-tab active">
+    <a class="" data-toggle="tab" href="#catches-map" role="tab" aria-selected="true">Map</a>
+  </li>
+  <li class="pyp-tab">
+    <a class="" data-toggle="tab" href="#catches-list" role="tab" aria-selected="false">List</a>
+  </li>
+</ul>
 
 <div class="tab-content" id="tab_content_list">
   <div class="tab-pane" id="catches-list" role="tabpanel" aria-labelledby="pills-home-tab">

@@ -1,38 +1,19 @@
-.tab_general {
+.pyp-tabs {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tab_general a {
-  width: 190px;
-  height: 40px;
-  color: white;
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  background-color: #33cccc;
-}
-
-.nav li  {
-  padding-left: 1px;
-  padding-right: 1px;
-}
-
-.tab_content_list {
-  display: flex;
-  flex: 1;
-}
-
-.tab_content_map {
- width: 100vh;
-}
-
-.tab-content {
-  flex: 1;
-  overflow: scroll;
-}
-
-#pills-tab {
-  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .pyp-tab {
+    flex: 1;
+    text-align: center;
+    &.active {
+      background: lightgray;
+    }
+    a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #666666;
+    }
+  }
 }
