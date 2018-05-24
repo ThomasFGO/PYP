@@ -121,9 +121,9 @@ puts 'Finished!'
 
 croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres", pseudo: "Crousti")
 cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", pseudo: "Cousteau")
-maxou = User.create!(email: "maxou@gmail.com", password: "maxouxou", pseudo: "Maxikikirikiki")
-osque = User.create!(email: "osque@gmail.com", password: "oscarito", pseudo: "Oscaritatitato")
-tomimi = User.create!(email: "tomimi@gmail.com", password: "tomimimimi", pseudo: "Tomimitromimi")
+maxou = User.create!(email: "max@gmail.com", password: "maxpyp", pseudo: "Maxou")
+osque = User.create!(email: "osque@gmail.com", password: "osquepyp", pseudo: "Osque")
+tommy = User.create!(email: "tom@gmail.com", password: "tompyp", pseudo: "Tommy")
 
 
 puts 'Creating catches...'
@@ -165,7 +165,7 @@ catches_attributes = [
     longitude: 0.24371
   },
   {
-    user: tomimi,
+    user: tommy,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -177,7 +177,7 @@ catches_attributes = [
     longitude: 0.10048
   },
   {
-    user: tomimi,
+    user: tommy,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
