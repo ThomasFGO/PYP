@@ -22,7 +22,7 @@ class CatchesController < ApplicationController
     @catch = current_user.catches.new(catch_params)
     #create the marker
     if @catch.save
-      redirect_to root_path
+      redirect_to catch_path(@catch)
     else
       render "catches/new"
     end
