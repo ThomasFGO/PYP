@@ -1,5 +1,5 @@
 <h3> <strong>Friends requests</strong> </h3>
-<%@incoming.each do |ir| %>
+<% @incoming.each do |ir| %>
 <ul>
   <li><h5><%= ir.user.email %></h5>
   <%= link_to "Accept the request", friend_request_path(ir), method: :patch %>
@@ -9,9 +9,9 @@
 <%end%>
 
 <h3> <strong>My friend requests waiting</strong> </h3>
-<h1><%@outgoing.each do |outr| %></h1>
+<h1><% @outgoing.each do |outr| %></h1>
 <ul>
-  <li><h5><%= outr.user.email %></h5></li>
+  <li><h5><%= outr.friend.email %></h5></li>
 </ul>
 <%end%>
 
