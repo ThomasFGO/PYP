@@ -1,23 +1,24 @@
 <%= simple_form_for(@catch) do |f| %>
-  <%= f.association :specie, label: "Espèce", include_blank: "Choisir une espèce" %>
+  <%= f.association :specie, include_blank: "Choose a specie" %>
   <%= f.label :photo do %>
-    Photo
-    <br>
 
-    <span class="btn btn-primary">Add a picture</span>
+    <span class="btn">Add a picture</span>
 
   <% end %>
   <div class="hidden">
     <%= f.input :photo, label: false %>
   </div>
-  <div>
-  <img id="image-preview" src="#" alt="your image"
-    style="width: 100%; height: 100px; object-fit: contain; background: #AAA;" />
+  <div class="image-background-preview">
+  <img id="image-preview" src="#" alt="Waiting for your image"
+    style="width: 100%; height: 100px; object-fit: contain; background: white;" />
   </div>
-  <%= f.input :size, label: "Taille", placeholder: "cm" %>
-  <%= f.input :weight, label: "Poids", placeholder: "kg" %>
-  <%= f.association :technic, label: "Technique", include_blank: "Choisir une technique"%>
-  <%= f.input :description, label: "Détails", placeholder: "Détails de la prise"%>
+  <br>
+  <div class="inline-form">
+    <div class="form-item"> <%= f.input :size, placeholder: "cm" %> </div>
+    <div class="form-item"> <%= f.input :weight, placeholder: "kg" %> </div>
+  </div>
+  <%= f.association :technic, label: "Technic", include_blank: "Choose a technic"%>
+  <%= f.input :description, placeholder: "Add details"%>
   <%= f.input :latitude, as: :hidden %>
   <%= f.input :longitude, as: :hidden %>
   <%= f.input :created_at, as: :hidden %>
@@ -25,6 +26,6 @@
     <div class="catch-map-preview"> </div>
   <% end %>
   <br>
-  <%= f.button :submit, "Valider", class: "btn btn-primary"  %>
-  <%= link_to 'Retour', root_path, class: "btn btn-danger" %>
+  <%= f.button :submit, "Add catch", class: "btn btn-primary"  %>
+  <%= link_to 'Back', root_path, class: "btn btn-danger" %>
 <% end %>
