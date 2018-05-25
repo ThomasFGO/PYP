@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+<% avatar_url = current_user.facebook_picture_url || "https://i.pinimg.com/originals/61/67/89/61678957b55e21fd48724b879f6e17d1.png" %>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -12,13 +13,17 @@
 
     <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
     <div>
-      <%= link_to "Feed", root_path, class: "feed-navbar" %>
+      <%= link_to root_path do %>
+        <i class="fas fa-newspaper"></i>
+      <% end %>
     </div>
     <div>
-      <%= link_to "Friends", friends_path, class: "friends-navbar" %>
+      <%= link_to friends_path do %>
+        <i class="fas fa-user-friends"></i>
+      <% end %>
     </div>
-    <div>
-      <%= link_to current_user.pseudo, catches_path, class: "user-navbar" %>
+    <div class="profile-img">
+      <%= link_to (image_tag avatar_url, class: "avatar-navbar"), catches_path %>
     </div>
 
 </div>
