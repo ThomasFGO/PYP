@@ -31,7 +31,6 @@
         <p><%= review.user.email %></p>
         <p><%= review.content %></p>
       <%end%>
-
     </div>
 
   <div id="add-review">
@@ -41,12 +40,9 @@
           <% end %>
   </div>
 
-  </div>
-
   <div id="map"  style="width: 100%; height: 600px; " data-markers="<%= @markers.to_json %>"></div>
 
   <div>
-
     <% if current_user == @catch.user %>
       <%=link_to "Edit", edit_catch_path(@catch)%>
       <%= link_to "Delete", catch_path(@catch), method: :delete,
@@ -56,4 +52,4 @@
   </div>
 </div>
 <br>
-<br>
+<br> 
