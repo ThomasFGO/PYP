@@ -54,11 +54,15 @@
     width: 100%;
   }
   .card-footer {
-    padding: 15px;
+
     padding-bottom: 5px;
     .comments {
       display: flex;
-      margin-bottom: 5px;
+      justify-content: center;
+    }
+    .comments .btn-comment {
+      text-decoration: none;
+      color: black;
     }
     .comments h6{
       color: black;
@@ -78,10 +82,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding-bottom: 5px;
     }
     .link-see-more a {
       text-decoration: none;
       color: #274B64;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+    .link-see-more a:hover {
+      text-decoration: none;
+      color: white;
+      background-color: #274B64;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 5px;
+      margin-top: 5px;
     }
   }
 }
