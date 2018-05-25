@@ -1,10 +1,11 @@
+<% avatar_url = current_user.facebook_picture_url || "https://i.pinimg.com/originals/61/67/89/61678957b55e21fd48724b879f6e17d1.png" %>
  <div class="card">
         <div class="card-header">
           <div class="profile-img">
-            <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar"/>
+            <%= image_tag avatar_url, class: "avatar-navbar" %>
           </div>
           <div class="profile-info">
-            <h4 class="specie"><strong> <%= catch.user.pseudo %> </strong></h4>
+            <h4 class="specie"><strong> <%= catch.user.first_name %> <%= catch.user.last_name.first  %>. </strong></h4>
             <h5 class="technic"><%= catch.specie.name %></h5>
           </div>
           <div class="time">

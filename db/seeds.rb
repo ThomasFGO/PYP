@@ -120,18 +120,23 @@ Technic.create!(technics_attributes)
 puts 'Finished!'
 
 
-croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres", pseudo: "Crousti")
-cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", pseudo: "Cousteau")
-maxou = User.create!(email: "max@gmail.com", password: "maxpyp", pseudo: "Maxou")
-osque = User.create!(email: "osque@gmail.com", password: "osquepyp", pseudo: "Osque")
-tommy = User.create!(email: "tom@gmail.com", password: "tompyp", pseudo: "Tommy")
+croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres", first_name: "Crousti", last_name: "Tommy")
+cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", first_name: "Commandant", last_name: "Cousteau")
+maxou = User.create!(email: "max@gmail.com", password: "maxpyp", first_name: "Maximilien", last_name: "Strauss")
+osque = User.create!(email: "osque@gmail.com", password: "osquepyp", first_name: "Oscar", last_name: "Maybon")
+tommy = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Thomas", last_name: "Morin")
+clarinette = User.create!(email: "clarinette@gmail.com", password: "clairepyp", first_name: "Claire", last_name: "Gautier")
 Friendship.new(user: maxou, friend: osque).save
-Friendship.new(user: maxou, friend: tommy).save
+Friendship.new(user: maxou, friend: osque).save
+Friendship.new(user: clarinette, friend: osque).save
+Friendship.new(user: clarinette, friend: tommy).save
 Friendship.new(user: tommy, friend: osque).save
 Friendship.new(user: maxou, friend: croustibat).save
 Friendship.new(user: osque, friend: croustibat).save
+Friendship.new(user: clarinette, friend: croustibat).save
 Friendship.new(user: tommy, friend: croustibat).save
 Friendship.new(user: maxou, friend: cousteau).save
+Friendship.new(user: clarinette, friend: cousteau).save
 
 
 
@@ -271,7 +276,7 @@ catches_attributes = [
     longitude: 0.23298
   },
   {
-    user: croustibat,
+    user: clarinette,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,
@@ -283,7 +288,7 @@ catches_attributes = [
     longitude: 0.20351
   },
   {
-    user: croustibat,
+    user: clarinette,
     specie: Specie.order("random()").first,
     size: 56,
     weight: 2.1,

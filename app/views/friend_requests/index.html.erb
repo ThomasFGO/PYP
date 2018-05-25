@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="friends">
     <h3 class="title"> <strong>INVITATIONS</strong> </h3>
@@ -6,7 +7,8 @@
         <div class="friendscards">
 
             <div class="profile-img">
-                <img src='https://kitt.lewagon.com/placeholder/users/osque' class="avatar"/>
+              <% avatar_url = ir.user.facebook_picture_url || "https://i.pinimg.com/originals/61/67/89/61678957b55e21fd48724b879f6e17d1.png" %>
+              <%= image_tag avatar_url, class: "avatar" %>
             </div>
             <div class="friendstext">
               <h5><%= ir.user.email %></h5>
@@ -21,7 +23,8 @@
     <% @outgoing.each do |outr| %>
       <div class="friendscards">
         <div class="profile-img">
-                <img src='https://kitt.lewagon.com/placeholder/users/MendyDihars' class="avatar"/>
+          <% avatar_url = outr.friend.facebook_picture_url || "https://i.pinimg.com/originals/61/67/89/61678957b55e21fd48724b879f6e17d1.png" %>
+          <%= image_tag avatar_url, class: "avatar" %>
         </div>
         <div class="friendstext">
           <h5><%= outr.friend.email %></h5>
