@@ -13,10 +13,12 @@
   align-items: center;
   background-color: #194C67;
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: none;
+  font-size: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
 }
 
 .visible-plus-btn .plus-btn {
