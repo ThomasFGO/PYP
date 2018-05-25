@@ -145,7 +145,7 @@ puts 'Creating catches...'
 catches_attributes = [
   {
     user: osque,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Carpe"),
     size: 66,
     weight: 6.7,
     date: Date.new(2018,05,15),
