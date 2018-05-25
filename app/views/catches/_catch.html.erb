@@ -18,16 +18,16 @@
         </div>
 
         <div class="card-footer">
-          <div class="comments">
-          <%= link_to 'Add review', catch_path(catch), class: "btn" %>
+          <div class="link-see-more">
+          <%=link_to "See more", catch_path(catch)%>
           </div>
           <div class="line">
             <hr>
           </div>
-
-          <div class="link-see-more">
-          <%=link_to "See more", catch_path(catch)%>
+          <div class="comments">
+          <%= link_to 'Add a comment', catch_path(catch), class: "btn-comment" %>
           </div>
+          
 
         </div>
 
