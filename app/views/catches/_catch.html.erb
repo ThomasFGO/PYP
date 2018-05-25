@@ -3,6 +3,7 @@
           <div class="profile-img">
             <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar"/>
           </div>
+
           <div class="profile-info">
             <h4 class="specie"><strong> <%= catch.user.pseudo %> </strong></h4>
             <h5 class="technic"><%= catch.specie.name %></h5>
@@ -14,22 +15,18 @@
         <div class="content-img">
           <%= cl_image_tag catch.photo %>
         </div>
+
         <div class="card-footer">
-          <div class="description">
-            <span class="username">bobby234</span> <p>Magnifique !</p>
-            <span class="username">jack456</span> <p>Chanmé ma gueule !</p>
+          <div class="comments">
+            <h6></h6>
+            <p></p>
           </div>
-          <div class="picto footer-links">
-            <ul class="list-inline">
-              <li><a href=""><i class="fa fa-heart"></i></a></li>
-              <li><a href=""><i class="fa fa-share"></i></a></li>
-              <li><a href=""><i class="fa fa-star"></i></a></li>
-            </ul>
+          <div class="line">
+            <hr>
           </div>
-          <div class="likes">
-            21 likes
-          </div>
+          <div class="link-see-more">
           <%=link_to "See more", catch_path(catch)%>
+          </div>
         </div>
 
       </div>
