@@ -157,7 +157,7 @@ catches_attributes = [
   },
   {
     user: osque,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Carpe"),
     size: 64,
     weight: 6.1,
     date: Date.new(2018,05,15),
@@ -169,7 +169,7 @@ catches_attributes = [
   },
   {
     user: osque,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
@@ -181,7 +181,7 @@ catches_attributes = [
   },
   {
     user: tommy,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Brochet"),
     size: 65,
     weight: 2.1,
     date: Date.new(2018,05,15),
@@ -193,7 +193,7 @@ catches_attributes = [
   },
   {
     user: tommy,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Blackbass"),
     size: 25,
     weight: 0.2,
     date: Date.new(2018,05,15),
@@ -205,7 +205,7 @@ catches_attributes = [
   },
   {
     user: tommy,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 72,
     weight: 4.8,
     date: Date.new(2018,05,15),
@@ -217,7 +217,7 @@ catches_attributes = [
   },
   {
     user: croustibat,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Brochet"),
     size: 116,
     weight: 10.1,
     date: Date.new(2018,05,15),
@@ -229,7 +229,7 @@ catches_attributes = [
   },
   {
     user: croustibat,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Sandre"),
     size: 86,
     weight: 7.1,
     date: Date.new(2018,05,15),
@@ -241,7 +241,7 @@ catches_attributes = [
   },
   {
     user: croustibat,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
@@ -253,7 +253,7 @@ catches_attributes = [
   },
   {
     user: croustibat,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Blackbass"),
     size: 43,
     weight: 1.7,
     date: Date.new(2018,05,15),
@@ -265,7 +265,7 @@ catches_attributes = [
   },
   {
     user: cousteau,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 49,
     weight: 1.7,
     date: Date.new(2018,05,15),
@@ -277,7 +277,7 @@ catches_attributes = [
   },
   {
     user: clarinette,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 48,
     weight: 1.7,
     date: Date.new(2018,05,15),
@@ -289,7 +289,7 @@ catches_attributes = [
   },
   {
     user: clarinette,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Perche"),
     size: 23,
     weight: 0.2,
     date: Date.new(2018,05,15),
@@ -301,7 +301,7 @@ catches_attributes = [
   },
   {
     user: maxou,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Perche"),
     size: 45,
     weight: 1.5,
     date: Date.new(2018,05,15),
@@ -313,7 +313,7 @@ catches_attributes = [
   },
   {
     user: maxou,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Perche"),
     size: 44,
     weight: 1.4,
     date:Date.new(2018,05,15),
@@ -325,7 +325,7 @@ catches_attributes = [
   },
   {
     user: maxou,
-    specie: Specie.order("random()").first,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 24,
     weight: 0.2,
     date: Date.new(2018,05,15),
