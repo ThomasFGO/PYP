@@ -29,6 +29,7 @@ class CatchesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @catch = Catch.find(params[:id])
   end
 
