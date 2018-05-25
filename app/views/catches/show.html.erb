@@ -34,19 +34,17 @@
 
     </div>
 
-<div id="add-review">
-        <%= simple_form_for([@catch, @review]) do |f| %>
-          <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
-          <%= f.button :submit, "Add review", class: "btn btn-primary" %>
-        <% end %>
-</div>
-
-
+  <div id="add-review">
+          <%= simple_form_for([@catch, @review]) do |f| %>
+            <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
+            <%= f.button :submit, "Add review", class: "btn btn-primary" %>
+          <% end %>
+  </div>
 
   </div>
-  <div>
-   <img class="static-map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@catch.latitude%>,<%= @catch.longitude %>&zoom=15&size=373x279&maptype=roadmap&markers=icon:https://i.imgur.com/07nU9eN.png%7C<%= @catch.latitude %>,<%= @catch.longitude %>&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>">
-  </div>
+
+  <div id="map"  style="width: 100%; height: 600px; " data-markers="<%= @markers.to_json %>"></div>
+
   <div>
 
     <% if current_user == @catch.user %>

@@ -15,6 +15,17 @@ class CatchesController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.new
+    @catch = Catch.find(params[:id])
+    @markers = [{
+      lat: @catch.latitude,
+      lng: @catch.longitude,
+      icon: ActionController::Base.helpers.asset_path("fish_marker_11.png"),
+      # infoWindow: { content: render_to_string(partial: "/catches/marker_content", locals: { catch: @catch }) }
+    }]
+  end
+
   def new
     @catch = Catch.new
   end
@@ -29,10 +40,6 @@ class CatchesController < ApplicationController
     end
   end
 
-  def show
-    @review = Review.new
-    @catch = Catch.find(params[:id])
-  end
 
   def edit
     @catch = Catch.find(params[:id])
