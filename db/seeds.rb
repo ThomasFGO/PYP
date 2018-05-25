@@ -151,7 +151,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/qsf6T0G.png",
     description: "Carpe",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "A l'anglaise"),
     latitude: 45.66097,
     longitude: 0.09973
   },
@@ -163,7 +163,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/miFV9I3.png",
     description: "Carpe",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "A l'anglaise"),
     latitude: 45.66071,
     longitude: 0.10011
   },
@@ -175,7 +175,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/k4v2GHd.png",
     description: "The French Trout",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Mouche sèche"),
     latitude: 45.89344,
     longitude: 0.24371
   },
@@ -187,7 +187,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/Di3eASM.png",
     description: "Broc",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Poisson nageur"),
     latitude: 45.66016,
     longitude: 0.10048
   },
@@ -199,7 +199,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/OCZiDLO.png",
     description: "Little BB",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Poisson nageur"),
     latitude: 45.66133,
     longitude: 0.09995
   },
@@ -211,7 +211,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/Cb6EORY.png",
     description: "The Fat French Trout",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Cuillère"),
     latitude: 45.66076,
     longitude: 0.10005
   },
@@ -223,7 +223,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/nQsYRdB.jpg",
     description: "Monster Pike",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Streamer"),
     latitude: 45.6633,
     longitude: 0.24107
   },
@@ -235,7 +235,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/VXtbM5L.jpg",
     description: "Sandre du soir",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Streamer"),
     latitude: 45.66487,
     longitude: 0.24087
   },
@@ -247,7 +247,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/41xHSxS.jpg",
     description: "The French Trout",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Mouche noyée"),
     latitude: 45.67578,
     longitude: 0.23625
   },
@@ -259,7 +259,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/EeypleC.jpg",
     description: "BigBlackBass",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Streamer"),
     latitude: 45.67572,
     longitude: 0.23386
   },
@@ -271,7 +271,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/CGF57cZ.png",
     description: "The Trout of The Touvre",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Mouche noyée"),
     latitude: 45.67599,
     longitude: 0.23298
   },
@@ -283,7 +283,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/uj3sDEy.jpg",
     description: "Number 2",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Mouche noyée"),
     latitude: 45.67915,
     longitude: 0.20351
   },
@@ -295,7 +295,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/1K8DocB.jpg",
     description: "Little Perch",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Leurre souple"),
     latitude: 45.68702,
     longitude: 0.15531
   },
@@ -307,7 +307,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/lxR1VSW.jpg",
     description: "Masta",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Cuillère"),
     latitude: 45.68513,
     longitude: 0.1541
   },
@@ -319,7 +319,7 @@ catches_attributes = [
     date:Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/n7m4KyT.jpg",
     description: "Masta ep.2",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Poisson nageur"),
     latitude: 45.69158,
     longitude: 0.15234
   },
@@ -331,7 +331,7 @@ catches_attributes = [
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/qJIOPyy.jpg",
     description: "The French Trout",
-    technic: Technic.order("random()").first,
+    technic: Technic.find_by(name: "Mouche sèche"),
     latitude: 45.87617,
     longitude: 0.20698
   }
