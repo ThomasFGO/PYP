@@ -7,7 +7,7 @@
         <div class="friendscards">
 
             <div class="profile-img">
-              <% avatar_url = ir.user.facebook_picture_url || "https://i.pinimg.com/originals/61/67/89/61678957b55e21fd48724b879f6e17d1.png" %>
+              <% avatar_url = ir.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
               <%= image_tag avatar_url, class: "avatar" %>
             </div>
             <div class="friendstext">
@@ -23,7 +23,7 @@
     <% @outgoing.each do |outr| %>
       <div class="friendscards">
         <div class="profile-img">
-          <% avatar_url = outr.friend.facebook_picture_url || "https://i.pinimg.com/originals/61/67/89/61678957b55e21fd48724b879f6e17d1.png" %>
+          <% avatar_url = outr.friend.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
           <%= image_tag avatar_url, class: "avatar" %>
         </div>
         <div class="friendstext">
