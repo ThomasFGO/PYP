@@ -1,6 +1,7 @@
 class CatchesController < ApplicationController
 
   def index
+    @review = Review.new
     @catches = current_user.catches.includes(:specie, :technic)
     @catches_markers = @catches.where.not(latitude: nil, longitude: nil)
 

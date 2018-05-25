@@ -34,10 +34,13 @@
 
     </div>
 
-          <%= simple_form_for([@catch, @review]) do |f| %>
-            <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
-            <%= f.button :submit, "Add review", class: "btn btn-primary" %>
-          <% end %>
+<div id="add-review">
+        <%= simple_form_for([@catch, @review]) do |f| %>
+          <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
+          <%= f.button :submit, "Add review", class: "btn btn-primary" %>
+        <% end %>
+</div>
+
 
 
   </div>
