@@ -1,0 +1,40 @@
+<% content_for(:body_class, "visible-plus-btn") %>
+<ul class="pyp-tabs">
+  <li class="pyp-tab active">
+    <a class="" data-toggle="tab" href="#catches-map" role="tab" aria-selected="true">Map</a>
+  </li>
+  <li class="pyp-tab">
+    <a class="" data-toggle="tab" href="#catches-list" role="tab" aria-selected="false">Catches</a>
+  </li>
+  <li class="pyp-tab">
+    <a class="" data-toggle="tab" href="#catches-stats" role="tab" aria-selected="false">Stats</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="tab_content_list">
+  <div class="tab-pane" id="catches-list" role="tabpanel" aria-labelledby="pills-home-tab">
+    <%= render collection: @catches.order("created_at DESC"), partial: "catches/catch" %>
+
+  </div>
+
+  <div class="tab-pane active" id="catches-map" role="tabpanel" aria-labelledby="pills-profile-tab" style="min-height: 100vh;">
+
+  </div>
+
+  <div class="tab-pane active" id="catches-stats" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <%= render partial: "catches/stats" %>
+
+  </div>
+
+</div>
+
+
+<div id="map"  style="width: 100%; height: 600px; " data-markers="<%= @markers.to_json %>"></div>
+
+<% content_for :after_js do  %>
+  <script>
+    $(function(){
+      $('#map').appendTo('#catches-map');
+    });
+  </script>
+<% end %>
