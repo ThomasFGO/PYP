@@ -10,11 +10,18 @@
           <%= f.input :first_name, required: true, autofocus: true, :placeholder => "First name", label: false, input_html: { class: "form-control" }%>
           <%= f.input :last_name, required: true, autofocus: true, :placeholder => "Last name", label: false, input_html: { class: "form-control" }%>
           <%= f.input :password, required: true, :placeholder => "Password", label: false, input_html: { class: "form-control" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, :placeholder => "Password", label: false, input_html: { class: "form-control" }, required: true %>
+          <%= f.input :password_confirmation, :placeholder => "Confirm password", label: false, input_html: { class: "form-control" }, required: true %>
+          <%= f.label :photo do %>
+            <span class="btn btn-info">Add profile picture</span>
+          <div class="hidden">
+            <%= f.input :photo, label: false %>
+          </div>
+          <% end %>
         </div>
+        <br>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
         </div>
       <% end %>
 

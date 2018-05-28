@@ -1,8 +1,11 @@
-<% avatar_url = catch.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
  <div class="card">
         <div class="card-header">
           <div class="profile-img">
-            <%= image_tag avatar_url, class: "avatar" %>
+            <% if avatar_url = catch.user.facebook_picture_url %>
+              <%= image_tag avatar_url, class: "avatar-navbar" %>
+            <% else %>
+              <%= cl_image_tag catch.user.photo, class: "avatar-navbar" %>
+            <% end %>
           </div>
 
           <div class="profile-info">
@@ -27,7 +30,7 @@
           <div class="comments">
           <%= link_to 'Add a comment', catch_path(catch), class: "btn-comment" %>
           </div>
-          
+
 
         </div>
 
