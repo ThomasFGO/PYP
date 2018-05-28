@@ -1,23 +1,7 @@
 
 <div class="container">
   <div class="friends">
-    <h3 class="title"> <strong>INVITATIONS</strong> </h3>
-    <% @incoming.each do |ir| %>
 
-        <div class="friendscards">
-
-            <div class="profile-img">
-              <% avatar_url = ir.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
-              <%= image_tag avatar_url, class: "avatar" %>
-            </div>
-            <div class="friendstext">
-              <h5><%= ir.user.email %></h5>
-              <%= link_to "Accept", friend_request_path(ir), method: :patch %>
-            </div>
-
-        </div>
-
-    <%end%>
 
     <h3 class="title"> <strong>PENDING REQUESTS</strong> </h3>
     <% @outgoing.each do |outr| %>
@@ -34,7 +18,9 @@
 
     <br>
 
-    <%=link_to "Back to my friends", friends_path %>
+    <div class="friendscards">
+      <%=link_to "Back to my friends", friends_path %>
+    </div>
 
   </div>
 </div>

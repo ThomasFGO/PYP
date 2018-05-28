@@ -20,23 +20,39 @@
     </div>
     <div class="picto footer-links">
       <ul class="list-inline">
-        <li> <%= @catch.technic.name %> </li>
-        <li> <%= @catch.size %> cm </li>
-        <li> <%= @catch.weight %> kg </li>
-        <li> coordonnées : <%= @catch.latitude %>, <%= @catch.longitude %> </li>
+        <li><%=@catch.size%> cm</li>
+        <li><%=@catch.weight%> kg</li>
+        <br>
+        <li class="coord-gps">Technic: <%=@catch.technic.name%></li>
+        <br>
+        <li class="coord-gps"> GPS coordinates: <%= @catch.latitude %> - <%= @catch.longitude %> </li>
       </ul>
-      <%= @catch.description %>
+      <i> "<%= @catch.description %>" </i>
+      <br><br>
+</div>
 
-      <% @catch.reviews.each do |review| %>
-        <p><%= review.user.email %></p>
-        <p><%= review.content %></p>
-      <%end%>
-    </div>
+
+          <% @catch.reviews.each do |review| %>
+              <div class="friendscards reviews-display">
+              <div class="profile-img">
+                <% avatar_url = review.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
+                <%= image_tag avatar_url, class: "avatar-navbar" %>
+              </div>
+              <div class="friendstext">
+                <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %> : </p></strong>
+                <p><%= review.content %></p>
+              </div>
+            </div>
+          <%end%>
+
+
+
+    <br>
 
   <div id="add-review">
           <%= simple_form_for([@catch, @review]) do |f| %>
             <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
-            <%= f.button :submit, "Add review", class: "btn btn-primary" %>
+            <%= f.button :submit, "Add comment", class: "btn btn-primary" %>
           <% end %>
   </div>
 
@@ -52,4 +68,4 @@
   </div>
 </div>
 <br>
-<br> 
+<br>
