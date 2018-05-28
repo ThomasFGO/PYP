@@ -1,9 +1,9 @@
 <%= simple_form_for(@catch) do |f| %>
   <%= f.association :specie, include_blank: "Choose a specie" %>
   <%= f.label :photo do %>
-
-    <span class="btn">Add a picture</span>
-
+    <div class="btn-form-div">
+      <span class="btn-form">Add a picture</span>
+    </div>
   <% end %>
   <div class="hidden">
     <%= f.input :photo, label: false %>
