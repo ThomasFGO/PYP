@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :photo, PhotoUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
   has_many :reviews, dependent: :destroy
@@ -39,10 +40,4 @@ class User < ApplicationRecord
 
     return user
   end
-
-  # def photo_avatar(user)
-  #   if
-
-  # end
-
 end
