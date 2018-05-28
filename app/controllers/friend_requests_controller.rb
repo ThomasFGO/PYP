@@ -25,7 +25,7 @@ class FriendRequestsController < ApplicationController
 
   def update
     @friend_request.accept
-    redirect_to friend_requests_path
+    redirect_to friends_path
   end
 
   def destroy

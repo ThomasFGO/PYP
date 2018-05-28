@@ -15,8 +15,11 @@
         <% @incoming.each do |ir| %>
           <div class="friendscards">
             <div class="profile-img">
-            <% avatar_url = ir.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
+              <% if avatar_url = ir.user.facebook_picture_url %>
                 <%= image_tag avatar_url, class: "avatar" %>
+              <% else %>
+                <%= cl_image_tag ir.user.photo, class: "avatar" %>
+              <% end %>
             </div>
             <div class="friendstext">
               <h5><%= ir.user.first_name %> <%= ir.user.last_name %></h5>
@@ -38,9 +41,9 @@
         <div class="friendscards">
           <div class="profile-img">
             <% if avatar_url = friend.facebook_picture_url %>
-              <%= image_tag avatar_url, class: "avatar-navbar" %>
+              <%= image_tag avatar_url, class: "avatar" %>
             <% else %>
-              <%= cl_image_tag friend.photo, class: "avatar-navbar" %>
+              <%= cl_image_tag friend.photo, class: "avatar" %>
             <% end %>
           </div>
           <div class="friendstext">
