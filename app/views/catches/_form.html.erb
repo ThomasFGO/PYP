@@ -1,9 +1,9 @@
 <%= simple_form_for(@catch) do |f| %>
-  <%= f.association :specie, include_blank: "Choose a specie" %>
+  <%= f.association :specie, label: "Specie*", include_blank: "Choose a specie" %>
   <%= f.label :photo do %>
-
-    <span class="btn">Add a picture</span>
-
+    <div class="btn-form-div">
+      <span class="btn-form">Add a picture</span>
+    </div>
   <% end %>
   <div class="hidden">
     <%= f.input :photo, label: false %>
@@ -17,7 +17,7 @@
     <div class="form-item"> <%= f.input :size, placeholder: "cm" %> </div>
     <div class="form-item"> <%= f.input :weight, placeholder: "kg" %> </div>
   </div>
-  <%= f.association :technic, label: "Technic", include_blank: "Choose a technic"%>
+  <%= f.association :technic, label: "Technic*", include_blank: "Choose a technic"%>
   <%= f.input :description, placeholder: "Add details"%>
   <%= f.input :latitude, as: :hidden %>
   <%= f.input :longitude, as: :hidden %>
