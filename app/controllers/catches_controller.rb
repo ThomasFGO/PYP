@@ -13,6 +13,13 @@ class CatchesController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/catches/marker_content", locals: { catch: catch }) }
       }
     end
+
+    @maximum = current_user.catches.maximum(:size)
+    @count_total = current_user.catches.count
+    @average = current_user.catches.average(:size)
+    @sum_size = current_user.catches.sum(:size)
+    @sum_weight = current_user.catches.sum(:weight)
+
   end
 
   def show
