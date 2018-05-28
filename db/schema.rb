@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_25_100234) do
+ActiveRecord::Schema.define(version: 2018_05_28_145004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(version: 2018_05_25_100234) do
     t.index ["specie_id"], name: "index_catches_on_specie_id"
     t.index ["technic_id"], name: "index_catches_on_technic_id"
     t.index ["user_id"], name: "index_catches_on_user_id"
+  end
+
+  create_table "challenge_users", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_challenge_users_on_challenge_id"
+    t.index ["user_id"], name: "index_challenge_users_on_user_id"
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "name"
+    t.date "start_at"
+    t.date "end_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friend_requests", force: :cascade do |t|
@@ -103,6 +120,8 @@ ActiveRecord::Schema.define(version: 2018_05_25_100234) do
   add_foreign_key "catches", "species", column: "specie_id"
   add_foreign_key "catches", "technics"
   add_foreign_key "catches", "users"
+  add_foreign_key "challenge_users", "challenges"
+  add_foreign_key "challenge_users", "users"
   add_foreign_key "friend_requests", "users"
   add_foreign_key "friend_requests", "users", column: "friend_id"
   add_foreign_key "friendships", "users"

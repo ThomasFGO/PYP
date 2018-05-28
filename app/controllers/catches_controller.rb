@@ -39,7 +39,6 @@ class CatchesController < ApplicationController
 
   def create
     @catch = current_user.catches.new(catch_params)
-    #create the marker
     if @catch.save
       redirect_to catch_path(@catch)
     else
