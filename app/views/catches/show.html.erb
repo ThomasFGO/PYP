@@ -20,25 +20,32 @@
     </div>
     <div class="picto footer-links">
       <ul class="list-inline">
-        <li><%=@catch.technic.name%></li>
         <li><%=@catch.size%> cm</li>
         <li><%=@catch.weight%> kg</li>
-        <li class="coord-gps"> Coordonnées GPS : <%= @catch.latitude %> - <%= @catch.longitude %> </li>
+        <br>
+        <li class="coord-gps">Technic: <%=@catch.technic.name%></li>
+        <br>
+        <li class="coord-gps"> GPS coordinates: <%= @catch.latitude %> - <%= @catch.longitude %> </li>
       </ul>
       <i> "<%= @catch.description %>" </i>
       <br><br>
 </div>
 
-        <div class="comments">
+
           <% @catch.reviews.each do |review| %>
-           <div class="profile-img">
-          <% avatar_url = review.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
-            <%= image_tag avatar_url, class: "avatar-navbar" %>
-          </div>
-            <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %>. a commenté :</p></strong>
-            <p><%= review.content %></p>
+              <div class="friendscards reviews-display">
+              <div class="profile-img">
+                <% avatar_url = review.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
+                <%= image_tag avatar_url, class: "avatar-navbar" %>
+              </div>
+              <div class="friendstext">
+                <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %> : </p></strong>
+                <p><%= review.content %></p>
+              </div>
+            </div>
           <%end%>
-        </div>
+
+
 
     <br>
 
