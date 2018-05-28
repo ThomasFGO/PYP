@@ -1,34 +1,40 @@
 <% avatar_url = catch.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
  <div class="card">
-        <div class="card-header">
-          <div class="profile-img">
-            <%= image_tag avatar_url, class: "avatar" %>
-          </div>
+    <div class="card-header">
 
-          <div class="profile-info">
-            <h4 class="specie"><strong> <%= catch.user.first_name %> <%= catch.user.last_name.first  %>. </strong></h4>
-            <h5 class="technic"><%= catch.specie.name %></h5>
-          </div>
-          <div class="time">
-            <%= catch.created_at.strftime("%d/%m/%Y") %>
-          </div>
-        </div>
-        <div class="content-img">
-          <%= cl_image_tag catch.photo %>
-        </div>
-
-        <div class="card-footer">
-          <div class="link-see-more">
-          <%=link_to "See more", catch_path(catch)%>
-          </div>
-          <div class="line">
-            <hr>
-          </div>
-          <div class="comments">
-          <%= link_to 'Add a comment', catch_path(catch), class: "btn-comment" %>
-          </div>
-
-
-        </div>
-
+      <div class="profile-img">
+        <%= image_tag avatar_url, class: "avatar" %>
       </div>
+
+      <div class="profile-info">
+        <h4 class="specie"><strong> <%= catch.user.first_name %> <%= catch.user.last_name.first  %>. </strong></h4>
+        <h5 class="technic"><%= catch.specie.name %></h5>
+      </div>
+
+      <div class="time">
+        <%= catch.created_at.strftime("%d/%m/%Y") %>
+      </div>
+
+    </div>
+
+    <div class="content-img">
+      <%= cl_image_tag catch.photo %>
+    </div>
+
+    <div class="card-footer">
+
+      <div class="link-see-more">
+        <%=link_to "See more", catch_path(catch)%>
+      </div>
+
+      <div class="line">
+        <hr>
+      </div>
+
+      <div class="comments">
+        <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review"), class: "btn-comment" %>
+      </div>
+
+    </div>
+
+  </div>

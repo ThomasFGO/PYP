@@ -1,4 +1,5 @@
 <div class="card">
+
   <div class="card-header">
     <div class="profile-img">
       <div class= "avatar"> <%= cl_image_tag @catch.user.photo %> </div>
@@ -12,12 +13,15 @@
       <%= @catch.created_at.strftime("%d/%m/%Y") %>
     </div>
   </div>
+
   <div class="content-img">
     <%= cl_image_tag @catch.photo %>
   </div>
+
   <div class="card-footer">
     <div class="description">
     </div>
+
     <div class="picto footer-links">
       <ul class="list-inline">
         <li><%=@catch.size%> cm</li>
@@ -29,31 +33,30 @@
       </ul>
       <i> "<%= @catch.description %>" </i>
       <br><br>
-</div>
+    </div>
+  </div>
 
 
-          <% @catch.reviews.each do |review| %>
-              <div class="friendscards reviews-display">
-              <div class="profile-img">
-                <% avatar_url = review.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
-                <%= image_tag avatar_url, class: "avatar-navbar" %>
-              </div>
-              <div class="friendstext">
-                <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %> : </p></strong>
-                <p><%= review.content %></p>
-              </div>
-            </div>
-          <%end%>
-
-
+  <% @catch.reviews.each do |review| %>
+    <div class="friendscards reviews-display">
+      <div class="profile-img">
+        <% avatar_url = review.user.facebook_picture_url || "https://image.flaticon.com/icons/png/512/196/196675.png" %>
+        <%= image_tag avatar_url, class: "avatar-navbar" %>
+      </div>
+      <div class="friendstext">
+        <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %> : </p></strong>
+        <p><%= review.content %></p>
+      </div>
+    </div>
+  <%end%>
 
     <br>
 
   <div id="add-review">
-          <%= simple_form_for([@catch, @review]) do |f| %>
-            <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
-            <%= f.button :submit, "Add comment", class: "btn btn-primary" %>
-          <% end %>
+    <%= simple_form_for([@catch, @review]) do |f| %>
+    <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
+    <%= f.button :submit, "Add comment", class: "btn btn-primary" %>
+    <% end %>
   </div>
 
   <div id="map"  style="width: 100%; height: 600px; " data-markers="<%= @markers.to_json %>"></div>
@@ -66,6 +69,6 @@
     <%end%>
     <%= link_to 'Back', :back, class: "btn btn-danger" %>
   </div>
+
 </div>
-<br>
-<br>
+
