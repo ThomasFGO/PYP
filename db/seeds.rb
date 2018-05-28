@@ -1,7 +1,12 @@
 puts 'Cleaning database...'
+Review.destroy_all
+Friendship.destroy_all
+FriendRequest.destroy_all
 Catch.destroy_all
 Specie.destroy_all
 Technic.destroy_all
+ChallengeUser.destroy_all
+Challenge.destroy_all
 User.destroy_all
 
 
