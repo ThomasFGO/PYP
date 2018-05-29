@@ -1,13 +1,8 @@
-<div class="card">
-
-  <div class="card-header">
-    <div class="profile-img">
-      <% if avatar_url = catch.user.facebook_picture_url %>
-        <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(catch.user) %>
-      <% else %>
-        <%= link_to (cl_image_tag catch.user.photo, class: "avatar-navbar"), user_path(catch.user) %>
-      <% end %>
-    </div>
+ <div class="card">
+    <div class="card-header">
+       <div class="profile-img">
+         <%= link_to (image_tag catch.user.profile_picture, class: "avatar-navbar"), user_path(catch.user) %>
+       </div>
 
     <div class="profile-info">
       <div class="user-name">

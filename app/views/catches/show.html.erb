@@ -2,13 +2,7 @@
 
   <div class="card-header">
     <div class="profile-img">
-      <div class= "avatar">
-        <% if avatar_url = @catch.user.facebook_picture_url %>
-          <%= link_to (image_tag avatar_url, class: "avatar"), user_path(@catch.user) %>
-        <% else %>
-          <%= link_to (cl_image_tag @catch.user.photo, class: "avatar"), user_path(@catch.user) %>
-        <% end %>
-      </div>
+      <%= link_to (image_tag @catch.user.profile_picture, class: "avatar-navbar"), user_path(@catch.user) %>
     </div>
     <div class="profile-info">
       <div class="user-name">
@@ -48,11 +42,7 @@
   <% @catch.reviews.each do |review| %>
     <div class="friendscards reviews-display">
       <div class="profile-img">
-        <% if avatar_url = review.user.facebook_picture_url %>
-          <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(review.user) %>
-        <% else %>
-          <%= link_to (cl_image_tag review.user.photo, class: "avatar-navbar"), user_path(review.user) %>
-        <% end %>
+        <%= link_to (image_tag review.user.profile_picture, class: "avatar-navbar"), user_path(review.user) %>
       </div>
       <div class="friendstext">
         <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %> : </p></strong>
