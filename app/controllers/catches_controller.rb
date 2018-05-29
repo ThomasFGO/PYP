@@ -17,7 +17,7 @@ class CatchesController < ApplicationController
 
     @maximum = current_user.catches.maximum(:size)
     @count_total = current_user.catches.count
-    @average = current_user.catches.average(:size).round(2)
+    @average = current_user.catches.average(:size).to_f.round(2)
     @sum_size = current_user.catches.sum(:size)
     @sum_weight = current_user.catches.sum(:weight)
 
