@@ -17,17 +17,12 @@
           </div>
         </div>
         <div class="content-img">
-          <%= cl_image_tag catch.photo %>
+          <%= link_to (cl_image_tag catch.photo), catch_path(catch) %>
         </div>
 
         <div class="card-footer">
-          <div class="link-see-more">
-          <%=link_to "See more", catch_path(catch)%>
-          </div>
-          <div class="line">
-            <hr>
-          </div>
           <div class="comments">
+            <br> <br>
           <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review"), class: "btn-comment" %>
       </div>
 

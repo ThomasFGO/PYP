@@ -1,0 +1,12 @@
+
+<% if @review.persisted? %>
+
+  // faire apparaître le nouveau commentaireà la fin de la liste des commentaires
+  reviews = document.getElementById("reviews");
+
+  reviews.insertAdjacentHTML("beforeend", "<%= j render "reviews/review", review: @review %>");
+
+  // enlever le contenu du textarea
+  document.getElementById('new_review').reset();
+
+<% end %>

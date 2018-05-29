@@ -43,28 +43,18 @@
   </div>
 
 
-  <% @catch.reviews.each do |review| %>
-    <div class="friendscards reviews-display">
-      <div class="profile-img">
-        <% if avatar_url = review.user.facebook_picture_url %>
-          <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(review.user) %>
-        <% else %>
-          <%= link_to (cl_image_tag review.user.photo, class: "avatar-navbar"), user_path(review.user) %>
-        <% end %>
-      </div>
-      <div class="friendstext">
-        <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %> : </p></strong>
-        <p><%= review.content %></p>
-      </div>
-    </div>
-  <%end%>
+  <div id="reviews">
+    <% @catch.reviews.each do |review| %>
+      <%= render "reviews/review", review: review %>
+    <%end%>
+  </div>
 
-    <br>
+  <br>
 
   <div id="add-review">
-    <%= simple_form_for([@catch, @review]) do |f| %>
-    <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
-    <%= f.button :submit, "Add comment", class: "btn btn-primary" %>
+    <%= simple_form_for([@catch, @review], remote: true) do |f| %>
+      <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
+      <%= f.button :submit, "Add comment", class: "btn btn-primary" %>
     <% end %>
   </div>
   <br>
