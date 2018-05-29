@@ -5,46 +5,35 @@
        </div>
 
 
-          <div class="profile-info">
-     
-            <div class="user-name">
+        <div class="profile-info">
+
+          <div class="user-name">
               <%= catch.user.first_name %> <%= catch.user.last_name.first%>.
-            </div>
-            <div class="specie">
+          </div>
+          <div class="specie">
                <%= catch.specie.name.capitalize %>
           </div>
           <div class="time">
             <%= catch.created_at.strftime("%d/%m/%Y") %>
           </div>
         </div>
-        <div class="content-img">
-          <%= link_to (cl_image_tag catch.photo), catch_path(catch) %>
-        </div>
 
-        <div class="card-footer">
-          <div class="comments">
-            <br> <br>
-          <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review"), class: "btn-comment" %>
-      </div>
-    </div>
 
-    <div class="time">
-      <%= catch.created_at.strftime("%d/%m/%Y") %>
-    </div>
+
+
+
 
   </div>
 
   <div class="content-img">
-    <%= cl_image_tag catch.photo %>
+          <%= link_to (cl_image_tag catch.photo), catch_path(catch) %>
   </div>
 
   <div class="card-footer">
     <div class="friendscard">
       <div class="link-see-more">
         <br>
-        <div class="link-see-more-left">
-          <%=link_to "See more", catch_path(catch)%>
-        </div>
+
         <div>
           <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
         </div>
