@@ -5,11 +5,7 @@
     <% @outgoing.each do |outr| %>
       <div class="friendscards">
         <div class="profile-img">
-          <% if avatar_url = outr.friend.facebook_picture_url %>
-            <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(outr.friend) %>
-          <% else %>
-            <%= link_to (cl_image_tag outr.friend.photo, class: "avatar-navbar"), user_path(outr.friend.photo) %>
-          <% end %>
+          <%= link_to (image_tag outr.friend.profile_picture, class: "avatar-navbar"), user_path(outr.friend) %>
         </div>
         <div class="friendstext">
           <h5><%= outr.friend.email %></h5>
