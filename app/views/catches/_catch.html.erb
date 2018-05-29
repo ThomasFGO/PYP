@@ -1,12 +1,11 @@
  <div class="card">
     <div class="card-header">
+
        <div class="profile-img">
          <%= link_to (image_tag catch.user.profile_picture, class: "avatar-navbar"), user_path(catch.user) %>
        </div>
 
-
         <div class="profile-info">
-
           <div class="user-name">
               <%= catch.user.first_name %> <%= catch.user.last_name.first%>.
           </div>
@@ -17,23 +16,17 @@
             <%= catch.created_at.strftime("%d/%m/%Y") %>
           </div>
         </div>
-
-
-
-
-
-
-  </div>
+    </div>
 
   <div class="content-img">
-          <%= link_to (cl_image_tag catch.photo), catch_path(catch) %>
+    <%= link_to (cl_image_tag catch.photo, :width =>600, :height => 600,
+ :crop => :fill), catch_path(catch) %>
   </div>
 
   <div class="card-footer">
     <div class="friendscard">
       <div class="link-see-more">
         <br>
-
         <div>
           <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
         </div>
