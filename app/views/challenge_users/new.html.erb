@@ -14,4 +14,17 @@
   </div>
 </div>
 
-<!-- challenge participants -->
+
+<%= simple_form_for([@challenge, @challenge_user]) do |f| %>
+  <%= f.association :user, collection: @friends_to_add, label: "Participants", include_blank: "Add a friend", label_method: :full_name %>
+  <%= f.submit %>
+<% end %>
+
+<% @challenge.users.each do |user| %>
+  <p><%= user.full_name %></p>
+<% end %>
+
+
+<div>
+  <%= link_to "See the challenge", challenge_path(@challenge) %>
+</div>
