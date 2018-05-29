@@ -40,13 +40,15 @@
 
   <div class="card-footer">
     <div class="friendscard">
-    <div class="link-see-more">
-      <br>
-      <%=link_to "See more", catch_path(catch)%>
-    </div>
-    <div class="comments">
-      <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
-    </div>
+      <div class="link-see-more">
+        <br>
+        <div class="link-see-more-left">
+          <%=link_to "See more", catch_path(catch)%>
+        </div>
+        <div>
+          <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
+        </div>
+      </div>
     </div>
   </div>
 
