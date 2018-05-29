@@ -1,0 +1,13 @@
+<div class="friendscards reviews-display">
+  <div class="profile-img">
+    <% if avatar_url = review.user.facebook_picture_url %>
+      <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(review.user) %>
+    <% else %>
+      <%= link_to (cl_image_tag review.user.photo, class: "avatar-navbar"), user_path(review.user) %>
+    <% end %>
+  </div>
+  <div class="friendstext">
+    <strong><p><%= review.user.first_name %> <%= review.user.first_name.first %> : </p></strong>
+    <p><%= review.content %></p>
+  </div>
+</div>

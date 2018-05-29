@@ -9,10 +9,17 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      redirect_to catch_path(@catch)
+      respond_to do |format|
+        format.html { redirect_to catch_path(@catch) }
+        format.js
+      end
     else
-      render "catches/show"
+      respond_to do |format|
+        format.html { render 'catches/show' }
+        format.js
+      end
     end
+
   end
 
   private
