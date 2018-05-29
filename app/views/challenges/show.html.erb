@@ -1,17 +1,16 @@
 <div>
   <div>
-    <%= challenge.name %>
+    <%= @challenge.name %>
   </div>
 
   <div>
-    <%= challenge.start_at %>
-    <%= challenge.end_at %>
+    <%= @challenge.start_at %>
+    <%= @challenge.end_at %>
   </div>
 
   <div>
-    <% challenge_user.each do |challenge_user| %>
-      <%= challenge_user.first_name %>
-      <%= challenge_user.last_name %>
+    <% @challenge.users.each do |user| %>
+      <%= user.full_name %>
     <% end %>
   </div>
 </div>
