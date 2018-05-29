@@ -1,0 +1,8 @@
+<div>
+  <%= simple_form_for(@challenge) do |f| %>
+    <%= f.input :name, placeholder: "Challenge name"%>
+    <%= f.input :start_at, as: :date, html5: true, label: "Start"  %>
+    <%= f.input :end_at, as: :date, html5: true, label: "End" %>
+    <%= f.submit "Confirm", class: "btn btn-success" %>
+  <% end %>
+</div>
