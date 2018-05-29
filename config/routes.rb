@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :friends, only: [:index, :destroy]
   resources :friend_requests, only: [:index, :create, :update, :destroy]
   resources :users, only: [:show]
+  resources :challenges, only: [:index, :show, :create] do
+    resources :challenge_users, only: [:new, :create]
+  end
 end

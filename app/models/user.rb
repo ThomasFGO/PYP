@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :pending_friends, through: :friend_requests, source: :friend
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
+  has_many :challenge_users
+  has_many :challenges, through: :challenge_users
 
 
   validates :email, presence: true, uniqueness: true

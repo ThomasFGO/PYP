@@ -1,13 +1,17 @@
 class ChallengesController < ApplicationController
+  before_action :set_challenge, only: [:show]
 
   def index
-    @review = Review.new
-    @catches = challenge_users.catches.includes(:specie, :technic)
+    @user = current_user
+    @challenge = Challenge.new
+    @challenges = Challenge.where(user_id: current_user)
 
+    @ongoing_challenges = @user.challenges.count
 
   end
 
   def show
+
   end
 
   def new
@@ -15,19 +19,25 @@ class ChallengesController < ApplicationController
   end
 
   def create
+    @challenge = current_user.challenges.new
+    @challenges = current_user.challenges
+
     @challenge = current_user.challenges.new(challenge_params)
     if @challenge.save
-      redirect_to challenge_path(@challenge)
+      redirect_to new_challenge_challenge_user_path(@challenge)
     else
-      render "challenges/new"
+      render "challenges/index"
     end
+  end
+
+  def edit
   end
 
   def update
   end
 
   def destroy
-    @catch.destroy
+    @challenge.destroy
     redirect_to root_path
   end
 
@@ -38,7 +48,7 @@ class ChallengesController < ApplicationController
   end
 
   def challenge_params
-    params.require(:challenge).permit(:name, :start_at, :end_at, :user_id, :created_at)
+    params.require(:challenge).permit(:name, :start_at, :end_at, :challenge_user_id, :created_at)
   end
 
 end
