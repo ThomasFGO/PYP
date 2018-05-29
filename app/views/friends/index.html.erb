@@ -16,9 +16,9 @@
           <div class="friendscards">
             <div class="profile-img">
               <% if avatar_url = ir.user.facebook_picture_url %>
-                <%= image_tag avatar_url, class: "avatar" %>
+                <%= link_to (image_tag avatar_url, class: "avatar"), user_path(ir.user) %>
               <% else %>
-                <%= cl_image_tag ir.user.photo, class: "avatar" %>
+                <%= link_to (cl_image_tag ir.user.photo, class: "avatar"), user_path(ir.user) %>
               <% end %>
             </div>
             <div class="friendstext">
@@ -41,9 +41,9 @@
         <div class="friendscards">
           <div class="profile-img">
             <% if avatar_url = friend.facebook_picture_url %>
-              <%= image_tag avatar_url, class: "avatar" %>
+              <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(friend) %>
             <% else %>
-              <%= cl_image_tag friend.photo, class: "avatar" %>
+              <%= link_to (cl_image_tag friend.photo, class: "avatar-navbar"), user_path(friend) %>
             <% end %>
           </div>
           <div class="friendstext">

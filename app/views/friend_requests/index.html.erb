@@ -6,9 +6,9 @@
       <div class="friendscards">
         <div class="profile-img">
           <% if avatar_url = outr.friend.facebook_picture_url %>
-            <%= image_tag avatar_url, class: "avatar-navbar" %>
+            <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(outr.friend) %>
           <% else %>
-            <%= cl_image_tag outr.friend.photo, class: "avatar-navbar" %>
+            <%= link_to (cl_image_tag outr.friend.photo, class: "avatar-navbar"), user_path(outr.friend.photo) %>
           <% end %>
         </div>
         <div class="friendstext">
