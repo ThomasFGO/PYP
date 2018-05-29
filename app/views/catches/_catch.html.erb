@@ -1,16 +1,17 @@
  <div class="card">
-        <div class="card-header">
-          <div class="profile-img">
-            <% if avatar_url = catch.user.facebook_picture_url %>
-              <%= link_to (image_tag avatar_url, class: "avatar-navbar"), user_path(catch.user) %>
-            <% else %>
-              <%= link_to (cl_image_tag catch.user.photo, class: "avatar-navbar"), user_path(catch.user) %>
-            <% end %>
-          </div>
+    <div class="card-header">
+       <div class="profile-img">
+         <%= link_to (image_tag catch.user.profile_picture, class: "avatar-navbar"), user_path(catch.user) %>
+       </div>
+
 
           <div class="profile-info">
-            <h4 class="specie"><strong> <%= catch.user.first_name %> <%= catch.user.last_name.first  %>. </strong></h4>
-            <h5 class="technic"><%= catch.specie.name %></h5>
+     
+            <div class="user-name">
+              <%= catch.user.first_name %> <%= catch.user.last_name.first%>.
+            </div>
+            <div class="specie">
+               <%= catch.specie.name.capitalize %>
           </div>
           <div class="time">
             <%= catch.created_at.strftime("%d/%m/%Y") %>
@@ -25,7 +26,28 @@
             <br> <br>
           <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review"), class: "btn-comment" %>
       </div>
+    </div>
 
+    <div class="time">
+      <%= catch.created_at.strftime("%d/%m/%Y") %>
     </div>
 
   </div>
+
+  <div class="content-img">
+    <%= cl_image_tag catch.photo %>
+  </div>
+
+  <div class="card-footer">
+    <div class="friendscard">
+    <div class="link-see-more">
+      <br>
+      <%=link_to "See more", catch_path(catch)%>
+    </div>
+    <div class="comments">
+      <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
+    </div>
+    </div>
+  </div>
+
+</div>

@@ -2,18 +2,14 @@
 
   <div class="card-header">
     <div class="profile-img">
-      <div class= "avatar">
-        <% if avatar_url = @catch.user.facebook_picture_url %>
-          <%= link_to (image_tag avatar_url, class: "avatar"), user_path(@catch.user) %>
-        <% else %>
-          <%= link_to (cl_image_tag @catch.user.photo, class: "avatar"), user_path(@catch.user) %>
-        <% end %>
-      </div>
+      <%= link_to (image_tag @catch.user.profile_picture, class: "avatar-navbar"), user_path(@catch.user) %>
     </div>
     <div class="profile-info">
-      <h4 class="specie"><strong> <%= @catch.user.pseudo %> </strong></h4>
-      <br>
-      <h5 class="technic"><%= @catch.specie.name %></h5>
+      <div class="user-name">
+      <%= @catch.user.first_name %> <%= @catch.user.last_name.first%>.
+      </div>
+
+      <div class="specie"><%= @catch.specie.name %></div>
     </div>
     <div class="time">
       <%= @catch.created_at.strftime("%d/%m/%Y") %>
@@ -25,22 +21,23 @@
   </div>
 
   <div class="card-footer">
-    <div class="description">
-    </div>
-
     <div class="picto footer-links">
-      <ul class="list-inline">
-        <li><%=@catch.size%> cm</li>
-        <li><%=@catch.weight%> kg</li>
-        <br>
-        <li class="coord-gps">Technic: <%=@catch.technic.name%></li>
-        <br>
-        <li class="coord-gps"> GPS coordinates: <%= @catch.latitude %> - <%= @catch.longitude %> </li>
-      </ul>
+      <div class="friendscards">
+        <ul class="list-inline">
+          <li class="coord-gps"><%=@catch.size%> cm</li>
+          <li class="coord-gps"><%=@catch.weight%> kg</li>
+          <br>
+          <li class="coord-gps">Technic: <%=@catch.technic.name%></li>
+          <br>
+          <li class="coord-gps"> GPS coordinates: <%= @catch.latitude %> - <%= @catch.longitude %> </li>
+        </ul>
+      </div>
+      <div class="friendscards">
       <i> "<%= @catch.description %>" </i>
-      <br><br>
+      </div>
     </div>
-  </div>
+</div>
+
 
 
   <div id="reviews">
@@ -48,6 +45,7 @@
       <%= render "reviews/review", review: review %>
     <%end%>
   </div>
+
 
   <br>
 
