@@ -6,35 +6,37 @@
     </div>
     <div class="profile-info">
       <div class="user-name">
-      <%= @catch.user.first_name %> <%= @catch.user.last_name.first%>.
+        <%= @catch.user.first_name %> <%= @catch.user.last_name.first%>.
       </div>
 
       <div class="specie"><%= @catch.specie.name %></div>
-    </div>
-    <div class="time">
-      <%= @catch.created_at.strftime("%d/%m/%Y") %>
-    </div>
-    <div>
-      <% if current_user == @catch.user %>
-        <%= link_to edit_catch_path(@catch) do %>
-          <i class="far fa-edit"></i>
+      <div class="icon1">
+        <% if current_user == @catch.user %>
+          <%= link_to edit_catch_path(@catch) do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+      </div>
+      <div class="icon2">
+          <%= link_to catch_path(@catch), method: :delete, data: { confirm: "Are you sure ?" }  do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
         <% end %>
-        <%= link_to catch_path(@catch), method: :delete, data: { confirm: "Are you sure ?" }  do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
-      <% end %>
+      </div>
+      </div>
     </div>
-  </div>
 
   <div class="content-img">
     <%= cl_image_tag @catch.photo, :width => 600, :height => 600,
  :crop => :fill %>
   </div>
+</div>
 
   <div class="card-footer">
     <div class="picto footer-links">
       <div class="friendscards">
         <ul class="list-inline">
+          <li class="time"><%= @catch.created_at.strftime("%d/%m/%Y") %></li>
+          <br>
           <li class="coord-gps"><%=@catch.size%> cm</li>
           <li class="coord-gps"><%=@catch.weight%> kg</li>
           <br>

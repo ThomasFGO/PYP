@@ -41,13 +41,10 @@
       }
     }
     .time {
-      top: 10px;
-      position: relative;
-      font-size: 12px;
-      display: inline-block;
-      float: right;
-      padding-left: 20px;
-      padding-bottom: 20px;
+        font-size: 12px;
+        color: #111111;
+        margin: 0;
+        padding-left: 50px;
     }
   }
   .content-img img{
@@ -117,4 +114,24 @@
 
 .edit-profile {
   padding-top: 5px;
+}
+
+.icon1 {
+  font-size: 10px;
+  color: #111111;
+  margin: 0;
+  padding-left: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon2 {
+  font-size: 10px;
+  color: #111111;
+  margin: 0;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

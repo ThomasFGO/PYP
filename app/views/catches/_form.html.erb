@@ -2,7 +2,7 @@
   <%= f.association :specie, label: "Specie", include_blank: "Choose a specie" %>
   <%= f.label :photo do %>
     <div class="btn-form-div">
-      <span class="btn-form">Add a picture</span>
+      <span class="btn btn-default">Add a picture</span>
     </div>
   <% end %>
   <div class="hidden">
@@ -27,5 +27,7 @@
   <% end %>
   <br>
   <%= f.button :submit, "Add catch", class: "btn btn-primary"  %>
+  <br>
+  <br>
   <%= link_to 'Back', :back, class: "btn btn-danger" %>
 <% end %>
