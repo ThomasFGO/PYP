@@ -15,7 +15,7 @@
         <% @incoming.each do |ir| %>
           <div class="friendscards">
             <div class="profile-img">
-              <%= link_to (image_tag ir.user.profile_picture, class: "avatar-navbar"), user_path(ir.user) %>
+              <%= link_to (image_tag ir.user.profile_picture, class: "avatar"), user_path(ir.user) %>
             </div>
             <div class="friendstext">
               <h5><%= ir.user.first_name %> <%= ir.user.last_name %></h5>
@@ -27,8 +27,6 @@
       <div class="friendscards">
         <div class="friendstext">
           <%= link_to "My pending friends requests", friend_requests_path %>
-          <br>
-          <%= link_to "Back to home", root_path %>
         </div>
       </div>
 
@@ -36,7 +34,7 @@
       <% @friends.each do |friend| %>
         <div class="friendscards">
           <div class="profile-img">
-            <%= link_to (image_tag friend.profile_picture, class: "avatar-navbar"), user_path(friend) %>
+            <%= link_to (image_tag friend.profile_picture, class: "avatar"), user_path(friend) %>
           </div>
           <div class="friendstext">
               <h5><%= friend.first_name %> <%= friend.last_name %></h5>
@@ -45,7 +43,9 @@
           </div>
         </div>
       <%end%>
-
+    <div class="edit-profile">
+    <%= link_to 'Back to home', root_path, class: "btn btn-danger" %>
+    </div>
   </div>
 </div>
 
