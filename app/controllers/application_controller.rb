@@ -8,3 +8,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:photo])
   end
 end
+
+def default_url_options
+  { host: ENV["HOST"] || "www.pyp-fishing.com" }
+end

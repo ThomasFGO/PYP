@@ -1,16 +1,19 @@
-<h3 class="tilte"><strong>CHALLENGES</strong></h3>
+<div class="container">
+  <div class="all-challenges">
 
-<div>
-  <p>Ongoing challenges</p><%= @ongoing_challenges %>
+    <h3 class="tilte"><strong>CHALLENGES</strong></h3>
+
+    <div class="challenges">
+      <p>Inprogress challenges</p><%= @ongoing_challenges %>
+    </div>
+  </div>
+
+  <h3 class="tilte"><strong>NEW CHALLENGE</strong></h3>
+  <div>
+    <%= render 'form' %>
+  </div>
+
+  <div>
+    <%= render collection: @challenges.order("created_at DESC"), partial: "challenges/challenge" %>
+  </div>
 </div>
-
-<h3 class="tilte"><strong>NEW CHALLENGE</strong></h3>
-<div>
-  <%= render 'form' %>
-</div>
-
-<div>
-  <%= render collection: @challenges.order("created_at DESC"), partial: "challenges/challenge" %>
-</div>
-
-

@@ -1,4 +1,5 @@
 <% content_for(:body_class, "visible-plus-btn") %>
+
 <div id="feed">
   <%= render collection: @catches.order("created_at DESC"), partial: "catches/catch" %>
 </div>
@@ -26,3 +27,4 @@
     </script>
   <% end %>
 <% end %>
+

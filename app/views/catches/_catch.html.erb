@@ -33,7 +33,10 @@
       <div class="link-see-more">
         <br>
         <div>
-          <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
+          <%= link_to catch_path(catch, anchor: "add-review") do %>
+            <h6> <i class="far fa-comments"></i> Add comment </h6>
+          <% end %>
+          <%#= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
         </div>
       </div>
     </div>

@@ -24,6 +24,7 @@ class ChallengesController < ApplicationController
 
     @challenge = current_user.challenges.new(challenge_params)
     if @challenge.save
+      @challenge.challenge_users.create(user: current_user)
       redirect_to new_challenge_challenge_user_path(@challenge)
     else
       render "challenges/index"
