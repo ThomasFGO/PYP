@@ -19,7 +19,12 @@
     </div>
 
   <div class="content-img">
-    <%= link_to (cl_image_tag catch.photo, :width =>600, :height => 600,
+    <% if catch.photo.present? %>
+      <% picture = catch.photo %>
+    <% else %>
+      <% picture = catch.photo.metadata['public_id'] %>
+    <% end %>
+    <%= link_to (cl_image_tag picture, :width =>600, :height => 600,
  :crop => :fill), catch_path(catch) %>
   </div>
 

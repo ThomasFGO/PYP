@@ -40,10 +40,19 @@ class CatchesController < ApplicationController
   def create
     @catch = current_user.catches.new(catch_params)
     if @catch.save
+      ActionCable.server.broadcast(
+        "user_#{current_user.id}",
+        {
+          catch_html: render_to_string(partial: 'catches/catch', locals: { catch: @catch })
+        }
+      )
       redirect_to catch_path(@catch)
     else
       render "catches/new"
     end
+
+
+
   end
 
 
