@@ -13,12 +13,13 @@
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
-    
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="icon" href="https://imgur.com/a/ta7LRML" type="image/png" />
+
+    <%= favicon_link_tag %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body class="<%= yield(:body_class) %>">
