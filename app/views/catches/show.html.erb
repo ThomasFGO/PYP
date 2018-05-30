@@ -40,13 +40,13 @@
           <li class="coord-gps"><%=@catch.size%> cm</li>
           <li class="coord-gps"><%=@catch.weight%> kg</li>
           <br>
-          <li class="coord-gps">Technic: <%=@catch.technic.name%></li>
+          <li class="coord-gps">Technique : <%=@catch.technic.name%></li>
           <br>
-          <li class="coord-gps"> GPS coordinates: <%= @catch.latitude %> - <%= @catch.longitude %> </li>
+          <li class="coord-gps"> GPS Coordinates : <%= @catch.latitude %> - <%= @catch.longitude %> </li>
         </ul>
       </div>
       <div class="friendscards">
-      <i> "<%= @catch.description %>" </i>
+        <i class=> "<%= @catch.description %>" </i>
       </div>
     </div>
 </div>
@@ -71,5 +71,5 @@
       <%= link_to 'Back', :back, class: "btn btn-danger" %>
     </div>
   </div>
-
+<br>
 </div>

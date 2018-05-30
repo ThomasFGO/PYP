@@ -1,4 +1,4 @@
-function readURL(input) {
+function readCATCH(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
@@ -11,10 +11,10 @@ function readURL(input) {
     }
 
     $("#catch_photo").change(function(){
-        readURL(this);
+        readCATCH(this);
     });
 
-function readURL(input) {
+function readAVATAR(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
@@ -27,5 +27,5 @@ function readURL(input) {
     }
 
     $("#user_photo").change(function(){
-        readURL(this);
+        readAVATAR(this);
     });
