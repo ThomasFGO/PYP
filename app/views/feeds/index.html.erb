@@ -1,3 +1,28 @@
 <% content_for(:body_class, "visible-plus-btn") %>
-<%= render collection: @catches.order("created_at DESC"), partial: "catches/catch" %>
+<div id="feed">
+  <%= render collection: @catches.order("created_at DESC"), partial: "catches/catch" %>
+</div>
 
+
+
+<% content_for :after_js do %>
+  <% current_user.friends.each do |user| %>
+    <script>
+      App.messages = App.cable.subscriptions.create(
+        {
+          channel: 'UsersChannel',
+          user_id: <%= user.id %>
+        },
+        {
+          received: function(data) {
+            html = $(data.catch_html);
+            html.hide();
+            $("#feed").prepend(html);
+            html.slideDown();
+          }
+        }
+      );
+
+    </script>
+  <% end %>
+<% end %>
