@@ -10,7 +10,7 @@
           var lng = location.coords.longitude;
           var latlng = lat + "," + lng;
           console.log(latlng);
-          src_img = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlng + "&zoom&size=350x200&maptype=roadmap&markers=icon:https://i.imgur.com/07nU9eN.png%7C" + latlng + "&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>"
+          src_img = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlng + "&zoom=16&size=350x200&maptype=terrain&markers=icon:https://i.imgur.com/MKlBYXe.png%7C" + latlng + "&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>"
           console.log(src_img);
           $img = $('<img>').attr('src', src_img);
           $('.catch-map-preview').html($img);
