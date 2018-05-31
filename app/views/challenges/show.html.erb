@@ -29,21 +29,37 @@
     </div>
   </div>
 
-    <div class="friendscards">
-      <p>TOTAL CATCHES : <%= @count_total.count %><p/>
+  <div class="friendscards">
+    <div class="friendtext">
+      <p>TOTAL CATCHES : <% @count_total.first(3).each do |array| %> </p>
+         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last %><p/>
+      <% end %>
     </div>
+  </div>
 
-    <div class="friendscards">
-      <p>AVERAGE SIZE : <%= @average.first.size %> cm<p/>
+  <div class="friendscards">
+    <div class="friendtext">
+      <p>AVERAGE SIZE : <% @average.first(3).each do |array| %> </p>
+         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> cm<p/>
+      <% end %>
     </div>
+  </div>
 
-    <div class="friendscards">
-      <p>TOTAL SIZE : <%= @sum_size.first.size %> cm<p/>
+  <div class="friendscards">
+    <div class="friendtext">
+      <p>TOTAL SIZE : <% @sum_size.first(3).each do |array| %> </p>
+         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> cm<p/>
+      <% end %>
     </div>
+  </div>
 
-    <div class="friendscards">
-      <p>TOTAL WEIGHT : <%= @sum_weight.first.first %> kg<p/>
+  <div class="friendscards">
+    <div class="friendtext">
+      <p>TOTAL WEIGHT : <% @sum_weight.first(3).each do |array| %> </p>
+         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> kg<p/>
+      <% end %>
     </div>
+  </div>
     <%= link_to 'Back to challenges', challenges_path, class: "btn btn-back" %>
     <br>
     <br>
