@@ -2,5 +2,5 @@ class ChallengeUser < ApplicationRecord
   belongs_to :challenge
   belongs_to :user
 
-  validates :user, uniqueness: { scope: :challenge }
+  validates :user, presence: true, uniqueness: { scope: :challenge }
 end
