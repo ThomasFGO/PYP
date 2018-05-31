@@ -1,19 +1,29 @@
 <div class="container">
-  <div class="all-challenges">
-
-    <h3 class="tilte"><strong>CHALLENGES</strong></h3>
+    <h3 class="title"><strong>CHALLENGES</strong></h3>
 
     <div class="challenges">
-      <p>Inprogress challenges</p><%= @ongoing_challenges %>
+      <p>In progress : <%= current_user.challenges.count %> </p>
+
+      <% current_user.challenges.each do |challenge| %>
+        <div class="friendscards challenges startend">
+          <div><%= link_to challenge.name, challenge_path(challenge) %></div>
+          <div> Deadline: <%= challenge.end_at.strftime("%d/%m/%Y")  %></div>
+        </div>
+      <% end %>
     </div>
-  </div>
 
-  <h3 class="tilte"><strong>NEW CHALLENGE</strong></h3>
-  <div>
-    <%= render 'form' %>
-  </div>
 
+  <h3 class="title"><strong>NEW CHALLENGE</strong></h3>
   <div>
-    <%= render collection: @challenges.order("created_at DESC"), partial: "challenges/challenge" %>
+    <%= simple_form_for(@challenge) do |f| %>
+      <%= f.input :name, placeholder: "Challenge name"%>
+      <%= f.input :start_at, as: :date, html5: true, label: "Start"  %>
+      <%= f.input :end_at, as: :date, html5: true, label: "End" %>
+      <%= f.submit "Confirm", class: "btn btn-success" %>
+      <br>
+      <br>
+      <%= link_to 'Back to home', root_path, class: "btn btn-danger" %>
+    <% end %>
   </div>
+  <br>
 </div>
