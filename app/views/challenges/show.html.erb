@@ -18,30 +18,38 @@
         <div> <%= link_to user.full_name, user_path(user) %> </div>
       </div>
     <% end %>
+
+  <h3 class="title"><strong> STATS </strong></h3>
+
+  <div class="friendscards">
+    <div class="friendtext">
+      <p>BIGGEST FISH : <% @max_size.first(3).each do |array| %> </p>
+         <p> <%= image_tag array.user.profile_picture, class: "avatar-navbar" %> <%= array.user.first_name %> <%= array.size %> cm <p/>
+        <% end %>
+    </div>
+  </div>
+
+    <div class="friendscards">
+      <p>TOTAL CATCHES : <%= @count_total.count %><p/>
+    </div>
+
+    <div class="friendscards">
+      <p>AVERAGE SIZE : <%= @average.first.size %> cm<p/>
+    </div>
+
+    <div class="friendscards">
+      <p>TOTAL SIZE : <%= @sum_size.first.size %> cm<p/>
+    </div>
+
+    <div class="friendscards">
+      <p>TOTAL WEIGHT : <%= @sum_weight.first.first %> kg<p/>
+    </div>
     <%= link_to 'Back to challenges', challenges_path, class: "btn btn-back" %>
-
+    <br>
+    <br>
 </div>
 
 
-<div>
-  <p>BIGGEST FISH (cm)<p/><%= @max_size %>
-</div>
-
-<div>
-  <p>TOTAL CATCHES<p/><%= @count_total %>
-</div>
-
-<div>
-  <p>AVERAGE SIZE (cm)<p/><%= @average %>
-</div>
-
-<div>
-  <p>TOTAL SIZE (cm)<p/><%= @sum_size %>
-</div>
-
-<div>
-  <p>TOTAL WEIGHT (kg)<p/><%= @sum_weight %>
-</div>
 
 
 
