@@ -25,7 +25,7 @@
     <% end %>
   <%= simple_form_for([@challenge, @challenge_user]) do |f| %>
     <div class="challenge-form">
-      <div> <%= f.association :user, label: "", collection: @friends_to_add, include_blank: "Add friends", label_method: :full_name %> </div>
+      <div> <%= f.association :user, required: true, label: "", collection: @friends_to_add, include_blank: "Add friends", label_method: :full_name %> </div>
       <div> <%= f.submit "Add", class: "btn btn-add" %> </div>
     </div>
   <% end %>
