@@ -3,7 +3,6 @@ Review.destroy_all
 Friendship.destroy_all
 FriendRequest.destroy_all
 Catch.destroy_all
-puts "catch ok"
 Specie.destroy_all
 Technic.destroy_all
 ChallengeUser.destroy_all
@@ -131,13 +130,30 @@ tommy = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Th
 clarinette = User.create!(email: "clarinette@gmail.com", password: "clairepyp", first_name: "Claire", last_name: "Pyp")
 clairette = User.create!(email: "claire5613@hotmail.fr", password: "clairette", first_name: "Claire", last_name: "Gautier")
 oscar = User.create!(email: "oscar.maybon@gmail.com", password: "oscarito", first_name: "Oscar", last_name: "Maybon")
+sybillette = User.create!(email: "sybille@gmail.com", password: "sybillepyp", first_name: "Sybille", last_name: "Pyp")
+charlito = User.create!(email: "charlito@gmail.com", password: "charlito", first_name: "Charles", last_name: "Charlito")
+romain = User.create!(email: "romain@gmail.com", password: "romain", first_name: "Romain", last_name: "Pyp")
+nico = User.create!(email: "nico@gmail.com", password: "nicolas", first_name: "Nicolas", last_name: "Pyp")
+Friendship.new(user: clarinette, friend: maxou).save
+Friendship.new(user: clarinette, friend: osque).save
+Friendship.new(user: clarinette, friend: tommy).save
+Friendship.new(user: clarinette, friend: clairette).save
+Friendship.new(user: clarinette, friend: oscar).save
+Friendship.new(user: clarinette, friend: sybillette).save
+Friendship.new(user: clarinette, friend: charlito).save
+Friendship.new(user: clarinette, friend: romain).save
+Friendship.new(user: clarinette, friend: nico).save
 Friendship.new(user: maxou, friend: osque).save
 Friendship.new(user: maxou, friend: osque).save
 Friendship.new(user: clairette, friend: tommy).save
-Friendship.new(user: clarinette, friend: clairette).save
+Friendship.new(user: clairette, friend: sybillette).save
 Friendship.new(user: tommy, friend: osque).save
-FriendRequest.new(user: oscar, friend: clairette)
-FriendRequest.new(user: clairette, friend: maxou)
+Friendship.new(user: charlito, friend: clairette).save
+Friendship.new(user: tommy, friend: charlito).save
+FriendRequest.new(user: oscar, friend: clairette).save
+FriendRequest.new(user: clairette, friend: maxou).save
+FriendRequest.new(user: sybillette, friend: maxou).save
+
 
 
 
@@ -151,8 +167,56 @@ catches_attributes = [
     weight: 6.7,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/qsf6T0G.png",
-    description: "Carp",
+    description: "Fishing day is always a good day",
     technic: Technic.find_by(name: "Drop shot"),
+    latitude: 45.66097,
+    longitude: 0.09973
+  },
+  {
+    user: romain,
+    specie: Specie.find_by(name: "Carp"),
+    size: 66,
+    weight: 6.7,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/qsf6T0G.png",
+    description: "Love fishing at sunrise: best views best catches",
+    technic: Technic.find_by(name: "Drop shot"),
+    latitude: 45.66097,
+    longitude: 0.09973
+  },
+  {
+    user: romain,
+    specie: Specie.find_by(name: "Roach"),
+    size: 112,
+    weight: 9.7,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/OCZiDLO.png",
+    description: "Bad day but good catch",
+    technic: Technic.find_by(name: "Lure casting"),
+    latitude: 45.66097,
+    longitude: 0.09973
+  },
+  {
+    user: nico,
+    specie: Specie.find_by(name: "Brook trout"),
+    size: 23,
+    weight: 2.1,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/qsf6T0G.png",
+    description: "Small brook trout, easy fight",
+    technic: Technic.find_by(name: "Feeder fishing"),
+    latitude: 45.66097,
+    longitude: 0.09973
+  },
+  {
+    user: nico,
+    specie: Specie.find_by(name: "Blackbass"),
+    size: 78,
+    weight: 4.3,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/qsf6T0G.png",
+    description: "Fishing day for my first day of holidays!!! So good to be back at it!",
+    technic: Technic.find_by(name: "Hand fishing"),
     latitude: 45.66097,
     longitude: 0.09973
   },
@@ -163,7 +227,7 @@ catches_attributes = [
     weight: 6.1,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/miFV9I3.png",
-    description: "Carp",
+    description: "First time I get a Carp so proud",
     technic: Technic.find_by(name: "Drop shot"),
     latitude: 45.66071,
     longitude: 0.10011
@@ -171,11 +235,11 @@ catches_attributes = [
   {
     user: osque,
     specie: Specie.find_by(name: "Roach"),
-    size: 56,
+    size: 89,
     weight: 2.1,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/k4v2GHd.png",
-    description: "The French Trout",
+    description: "Biggest fish I got so far!! The season is starting well :)",
     technic: Technic.find_by(name: "Lure casting"),
     latitude: 45.89344,
     longitude: 0.24371
@@ -187,7 +251,7 @@ catches_attributes = [
     weight: 2.1,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/Di3eASM.png",
-    description: "Broc",
+    description: "Female bream, good catch but too much noise around, I had to wait a lot",
     technic: Technic.find_by(name: "Light jigging"),
     latitude: 45.66016,
     longitude: 0.10048
@@ -199,7 +263,7 @@ catches_attributes = [
     weight: 0.2,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/OCZiDLO.png",
-    description: "Little BB",
+    description: "Only catch of the day, a bit disapointed.. Hope tomorrow is going to be a better day",
     technic: Technic.find_by(name: "Light jigging"),
     latitude: 45.66133,
     longitude: 0.09995
@@ -217,7 +281,7 @@ catches_attributes = [
     longitude: 0.10005
   },
   {
-    user: clairette,
+    user: sybillette,
     specie: Specie.find_by(name: "Bream"),
     size: 116,
     weight: 10.1,
@@ -229,14 +293,26 @@ catches_attributes = [
     longitude: 0.24107
   },
   {
-    user: clairette,
+    user: sybillette,
+    specie: Specie.find_by(name: "Squalius"),
+    size: 76,
+    weight: 9.5,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/VXtbM5L.jpg",
+    description: "The season is starting, finally!!!",
+    technic: Technic.find_by(name: "Fly fishing"),
+    latitude: 45.66487,
+    longitude: 0.24087
+  },
+  {
+    user: sybillette,
     specie: Specie.find_by(name: "Bream"),
     size: 86,
     weight: 7.1,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/VXtbM5L.jpg",
     description: "Sandre du soir",
-    technic: Technic.find_by(name: "Fly fishing"),
+    technic: Technic.find_by(name: "Lure casting"),
     latitude: 45.66487,
     longitude: 0.24087
   },
@@ -307,7 +383,7 @@ catches_attributes = [
     weight: 1.5,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/lxR1VSW.jpg",
-    description: "Masta",
+    description: "NIght fishing with my friends!",
     technic: Technic.find_by(name: "Feeder fishing"),
     latitude: 45.68513,
     longitude: 0.1541
@@ -319,20 +395,32 @@ catches_attributes = [
     weight: 1.4,
     date:Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/n7m4KyT.jpg",
-    description: "Masta ep.2",
+    description: "I am glad I woke up at 6am to fish this beauty",
     technic: Technic.find_by(name: "Light jigging"),
     latitude: 45.69158,
     longitude: 0.15234
   },
   {
-    user: maxou,
+    user: charlito,
     specie: Specie.find_by(name: "Roach"),
     size: 24,
     weight: 0.2,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/qJIOPyy.jpg",
-    description: "The French Trout",
+    description: "Nice catch on a sunny afternoon with my friend",
     technic: Technic.find_by(name: "Lure casting"),
+    latitude: 45.87617,
+    longitude: 0.20698
+  },
+  {
+    user: charlito,
+    specie: Specie.find_by(name: "Silurus"),
+    size: 29,
+    weight: 3.12,
+    date: Date.new(2018,05,30),
+    remote_photo_url: "https://imgur.com/qJIOPyy.jpg",
+    description: "Intense fight to get this Silurus, but it was worth it!",
+    technic: Technic.find_by(name: "Surf fishing"),
     latitude: 45.87617,
     longitude: 0.20698
   }
