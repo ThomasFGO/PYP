@@ -5,4 +5,5 @@ class Catch < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   validates :specie, presence: true
+  validates :photo, presence: true
 end
