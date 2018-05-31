@@ -12,7 +12,7 @@
           console.log(latlng);
           src_img = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlng + "&zoom=16&size=350x200&maptype=terrain&markers=icon:https://i.imgur.com/MKlBYXe.png%7C" + latlng + "&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>"
           console.log(src_img);
-          $img = $('<img>').attr('src', src_img);
+          $img = $('<img>').attr('src', src_img).addclass("map-location");
           $('.catch-map-preview').html($img);
 
           $('#catch_latitude').val(lat);
