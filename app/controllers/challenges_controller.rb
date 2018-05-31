@@ -13,13 +13,13 @@ class ChallengesController < ApplicationController
   def show
     @participants = @challenge.users
     #@challenge_catches = Catch.where(user_id: @participants).where('created_at > ?', @challenge.start_at).where('created_at < ?', @challenge.end_at)
-    #@good_catches = Catch.where(user: Challenge.last.users).where("created_at > ?", Challenge.last.start_at).where("created_at < ?", Challenge.last.end_at)
+    @good_catches = Catch.where(user: Challenge.last.users).where("created_at > ?", Challenge.last.start_at).where("created_at < ?", Challenge.last.end_at)
 
-    #@max_size = @good_catches.order(size: :desc)
-    #@count_total = @good_catches.group(:user).count
-    #@average = @good_catches.group(:user).order(:user).average(:size).to_f.round(2)
-    #@sum_size = @good_catches.group(:user).order(:user).sum(size)
-    # @sum_weight = @good_catches.group(:user).order(:user).sum(weight)
+    @max_size = @good_catches.order(size: :desc)
+    @count_total = @good_catches.group(:user).count
+    @average = @good_catches.group(:user_id).average(:size)
+    @sum_size = @good_catches.group(:user_id).sum(:size)
+    @sum_weight = @good_catches.group(:user_id).sum(:weight)
 
   end
 
