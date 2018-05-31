@@ -19,7 +19,7 @@ function closeNav() {
 if(("standalone" in window.navigator) && window.navigator.standalone){
 
 	// If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
-	var noddy, remotes = false;
+	var noddy, remotes = true;
 
 	document.addEventListener('click', function(event) {
 
