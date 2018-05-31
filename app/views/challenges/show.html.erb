@@ -24,7 +24,7 @@
   <div class="friendscards">
     <div class="friendtext">
       <p>BIGGEST FISH : <% @max_size.first(3).each do |array| %> </p>
-         <p> <%= image_tag array.user.profile_picture, class: "avatar-navbar" %> <%= array.user.first_name %> <%= array.size %> cm <p/>
+         <p> <%= image_tag array.user.profile_picture, class: "avatar-navbar" %> <%= array.user.first_name %> : <%= link_to "#{array.size} cm", catch_path(array) %> <p/>
         <% end %>
     </div>
   </div>
