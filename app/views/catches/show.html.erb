@@ -23,12 +23,12 @@
           <% end %>
         </div>
         </div>
+        <div class="content-img">
+          <%= cl_image_tag @catch.photo, :width => 600, :height => 600,
+       :crop => :fill %>
+        </div>
     </div>
 
-  <div class="content-img">
-    <%= cl_image_tag @catch.photo, :width => 600, :height => 600,
- :crop => :fill %>
-  </div>
 </div>
 
   <div class="card-footer">
