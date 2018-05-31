@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
+  resources :feeds, param: :slug
+
+
   root to: 'feeds#index'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
@@ -11,4 +16,5 @@ Rails.application.routes.draw do
   resources :challenges, only: [:index, :show, :create] do
     resources :challenge_users, only: [:new, :create]
   end
+
 end

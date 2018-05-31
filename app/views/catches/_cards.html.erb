@@ -1,10 +1,10 @@
 <% content_for(:body_class, "visible-plus-btn") %>
 <ul class="pyp-tabs">
-  <li class="pyp-tab active">
-    <a class="" data-toggle="tab" href="#catches-map" role="tab" aria-selected="true">Map</a>
-  </li>
   <li class="pyp-tab">
-    <a class="" data-toggle="tab" href="#catches-list" role="tab" aria-selected="false"><%= @user.first_name %></a>
+    <a class="" data-toggle="tab" href="#catches-map" role="tab" aria-selected="false">Map</a>
+  </li>
+  <li class="pyp-tab active">
+    <a class="" data-toggle="tab" href="#catches-list" role="tab" aria-selected="true"><%= @user.first_name %></a>
   </li>
   <li class="pyp-tab">
     <a class="" data-toggle="tab" href="#catches-stats" role="tab" aria-selected="false">Stats</a>
@@ -12,7 +12,7 @@
 </ul>
 
 <div class="tab-content" id="tab_content_list">
-  <div class="tab-pane" id="catches-list" role="tabpanel" aria-labelledby="pills-home-tab">
+  <div class="tab-pane active" id="catches-list" role="tabpanel" aria-labelledby="pills-home-tab">
     <%= render collection: @catches.order("created_at DESC"), partial: "catches/catch" %>
 
   </div>

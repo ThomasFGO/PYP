@@ -30,24 +30,22 @@
       align-items: center;
       .user-name {
         font-size: 16px;
-        color: #111111;
+        color: #274B64;
+
 
       }
       .specie {
         font-size: 16px;
-        color: #111111;
+        color: #274B64;
         margin: 0;
         padding-left: 20px;
       }
     }
     .time {
-      top: 10px;
-      position: relative;
-      font-size: 12px;
-      display: inline-block;
-      float: right;
-      padding-left: 20px;
-      padding-bottom: 20px;
+        font-size: 12px;
+        color: #274B64;
+        margin: 0;
+        padding-left: 50px;
     }
   }
   .content-img img{
@@ -82,31 +80,26 @@
     .link-see-more {
       width: 100%;
       display: flex;
-     justify-content: space-between;
+      padding-left: 10px;
       padding-bottom: 5px;
-      padding-top: 12px;
+      padding-top: 5px;
     }
     .link-see-more a {
       text-decoration: none;
       color: black;
-      padding: 5px;
-      margin-top: 5px;
+      color: #274B64;
     }
     .link-see-more a:hover {
       text-decoration: none;
       color: #274B64;
-      padding: 5px;
-      border-radius: 5px;
-      margin-top: 5px;
-    }
-    .link-see-more-left {
-      padding-right: 160px;
     }
   }
 }
 
 .coord-gps {
   font-size: 14px;
+  color: #274B64;
+
 }
 
 
@@ -117,4 +110,24 @@
 
 .edit-profile {
   padding-top: 5px;
+}
+
+.icon1 {
+  font-size: 10px;
+  color: #111111;
+  margin: 0;
+  padding-left: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon2 {
+  font-size: 10px;
+  color: #111111;
+  margin: 0;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

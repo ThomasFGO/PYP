@@ -19,7 +19,12 @@
     </div>
 
   <div class="content-img">
-    <%= link_to (cl_image_tag catch.photo, :width =>600, :height => 600,
+    <% if catch.photo.present? %>
+      <% picture = catch.photo %>
+    <% else %>
+      <% picture = catch.photo.metadata['public_id'] %>
+    <% end %>
+    <%= link_to (cl_image_tag picture, :width =>600, :height => 600,
  :crop => :fill), catch_path(catch) %>
   </div>
 
@@ -28,7 +33,10 @@
       <div class="link-see-more">
         <br>
         <div>
-          <%= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
+          <%= link_to catch_path(catch, anchor: "add-review") do %>
+            <h6> <i class="far fa-comments"></i> Add comment </h6>
+          <% end %>
+          <%#= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
         </div>
       </div>
     </div>
