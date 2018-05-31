@@ -4,6 +4,9 @@
     <div class="btn-form-div">
       <span class="btn btn-default">Add a picture</span>
     </div>
+    <% if @catch.errors.messages[:photo].present? %>
+      Photo <%= @catch.errors.messages[:photo].join(', ') %>
+    <% end %>
   <% end %>
   <div class="hidden">
     <%= f.input :photo, required: true, label: false %>
