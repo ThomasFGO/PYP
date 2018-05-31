@@ -1,17 +1,16 @@
 <div class="container">
-  <h3 class="title"><strong>CHALLENGE : <%= @challenge.name.upcase %></strong></h3>
+  <h3 class="title"><strong> CHALLENGE : <%= @challenge.name.upcase %></strong></h3>
 
     <div class="startend">
       <div>
-        <h3 class="title"><strong> START </strong> </h3>
+        <h3 class="title"><i class="fas fa-flag green"></i><strong> START </strong> </h3>
         <%= @challenge.start_at.strftime("%d/%m/%Y") %>
       </div>
       <div>
-        <h3 class="title"><strong> END </strong> </h3>
+        <h3 class="title"><i class="fas fa-flag red"></i><strong> END </strong> </h3>
         <%= @challenge.end_at.strftime("%d/%m/%Y") %>
       </div>
     </div>
-  <br>
   <h3 class="title"><strong> CHALLENGERS </strong></h3>
     <% @challenge.users.each do |user| %>
       <div class="friendscards profile-img">
@@ -19,7 +18,7 @@
         <div> <%= link_to user.full_name, user_path(user) %> </div>
       </div>
     <% end %>
-    <%= link_to 'Back to challenges', challenges_path, class: "btn btn-danger" %>
+    <%= link_to 'Back to challenges', challenges_path, class: "btn btn-back" %>
 
 </div>
 
