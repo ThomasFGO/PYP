@@ -3,6 +3,7 @@ Review.destroy_all
 Friendship.destroy_all
 FriendRequest.destroy_all
 Catch.destroy_all
+puts "catch ok"
 Specie.destroy_all
 Technic.destroy_all
 ChallengeUser.destroy_all
@@ -124,24 +125,19 @@ technics_attributes = [
 Technic.create!(technics_attributes)
 puts 'Finished!'
 
-
-croustibat = User.create!(email: "croustibat@gmail.com", password: "jaimelesrivieres", first_name: "Crousti", last_name: "Tommy")
-cousteau = User.create!(email: "cousteau@gmail.com", password: "cousteau", first_name: "Commandant", last_name: "Cousteau")
 maxou = User.create!(email: "max@gmail.com", password: "maxpyp", first_name: "Maximilien", last_name: "Strauss")
-osque = User.create!(email: "osque@gmail.com", password: "osquepyp", first_name: "Oscar", last_name: "Maybon")
-tommy = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Thomas", last_name: "Morin")
-clarinette = User.create!(email: "clarinette@gmail.com", password: "clairepyp", first_name: "Claire", last_name: "Gautier")
+osque = User.create!(email: "osque@gmail.com", password: "osquepyp", first_name: "Oscar", last_name: "Pyp")
+tommy = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Thomas", last_name: "Pyp")
+clarinette = User.create!(email: "clarinette@gmail.com", password: "clairepyp", first_name: "Claire", last_name: "Pyp")
+clairette = User.create!(email: "claire5613@hotmail.fr", password: "clairette", first_name: "Claire", last_name: "Gautier")
+oscar = User.create!(email: "oscar.maybon@gmail.com", password: "oscarito", first_name: "Oscar", last_name: "Maybon")
 Friendship.new(user: maxou, friend: osque).save
 Friendship.new(user: maxou, friend: osque).save
-Friendship.new(user: clarinette, friend: osque).save
-Friendship.new(user: clarinette, friend: tommy).save
+Friendship.new(user: clairette, friend: tommy).save
+Friendship.new(user: clarinette, friend: clairette).save
 Friendship.new(user: tommy, friend: osque).save
-Friendship.new(user: maxou, friend: croustibat).save
-Friendship.new(user: osque, friend: croustibat).save
-Friendship.new(user: clarinette, friend: croustibat).save
-Friendship.new(user: tommy, friend: croustibat).save
-Friendship.new(user: maxou, friend: cousteau).save
-Friendship.new(user: clarinette, friend: cousteau).save
+FriendRequest.new(user: oscar, friend: clairette)
+FriendRequest.new(user: clairette, friend: maxou)
 
 
 
@@ -221,7 +217,7 @@ catches_attributes = [
     longitude: 0.10005
   },
   {
-    user: croustibat,
+    user: clairette,
     specie: Specie.find_by(name: "Bream"),
     size: 116,
     weight: 10.1,
@@ -233,7 +229,7 @@ catches_attributes = [
     longitude: 0.24107
   },
   {
-    user: croustibat,
+    user: clairette,
     specie: Specie.find_by(name: "Bream"),
     size: 86,
     weight: 7.1,
@@ -245,7 +241,7 @@ catches_attributes = [
     longitude: 0.24087
   },
   {
-    user: croustibat,
+    user: clairette,
     specie: Specie.find_by(name: "Roach"),
     size: 56,
     weight: 2.1,
@@ -257,7 +253,7 @@ catches_attributes = [
     longitude: 0.23625
   },
   {
-    user: croustibat,
+    user: clairette,
     specie: Specie.find_by(name: "Blackbass"),
     size: 43,
     weight: 1.7,
@@ -269,7 +265,7 @@ catches_attributes = [
     longitude: 0.23386
   },
   {
-    user: cousteau,
+    user: clairette,
     specie: Specie.find_by(name: "Roach"),
     size: 49,
     weight: 1.7,
