@@ -23,40 +23,80 @@
 
   <div class="friendscards">
     <div class="friendtext">
-      <p>BIGGEST FISH : <% @max_size.first(3).each do |array| %> </p>
-         <p> <%= image_tag array.user.profile_picture, class: "avatar-navbar" %> <%= array.user.first_name %> : <%= link_to "#{array.size} cm", catch_path(array) %> <p/>
+      <p>BIGGEST FISH : <% @max_size.first(3).each_with_index do |array, index| %> </p>
+       <p>
+      <% if index == 0 %>
+        <i class="fas fa-trophy gold"></i>
+      <% elsif index == 1 %>
+        <i class="fas fa-trophy silver"></i>
+      <% else %>
+        <i class="fas fa-trophy bronze"></i>
+      <% end %>
+        <%= image_tag array.user.profile_picture, class: "avatar-navbar" %> <%= array.user.first_name %> : <%= link_to array.specie.name, catch_path(array) %> <%= array.size %> cm<p/>
         <% end %>
     </div>
   </div>
 
   <div class="friendscards">
     <div class="friendtext">
-      <p>TOTAL CATCHES : <% @count_total.first(3).each do |array| %> </p>
-         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last %><p/>
+      <p>TOTAL CATCHES : <% @count_total.first(3).each_with_index do |array, index| %> </p>
+      <p>
+      <% if index == 0 %>
+        <i class="fas fa-trophy gold"></i>
+      <% elsif index == 1 %>
+        <i class="fas fa-trophy silver"></i>
+      <% else %>
+        <i class="fas fa-trophy bronze"></i>
+      <% end %>
+          <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last %> fish(es)<p/>
       <% end %>
     </div>
   </div>
 
   <div class="friendscards">
     <div class="friendtext">
-      <p>AVERAGE SIZE : <% @average.first(3).each do |array| %> </p>
-         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> cm<p/>
+      <p>AVERAGE SIZE : <% @average.first(3).each_with_index do |array, index| %> </p>
+      <p>
+      <% if index == 0 %>
+        <i class="fas fa-trophy gold"></i>
+      <% elsif index == 1 %>
+        <i class="fas fa-trophy silver"></i>
+      <% else %>
+        <i class="fas fa-trophy bronze"></i>
+      <% end %>
+          <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> cm<p/>
       <% end %>
     </div>
   </div>
 
   <div class="friendscards">
     <div class="friendtext">
-      <p>TOTAL SIZE : <% @sum_size.first(3).each do |array| %> </p>
-         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> cm<p/>
+      <p>TOTAL SIZE : <% @sum_size.first(3).each_with_index do |array, index| %> </p>
+      <p>
+      <% if index == 0 %>
+        <i class="fas fa-trophy gold"></i>
+      <% elsif index == 1 %>
+        <i class="fas fa-trophy silver"></i>
+      <% else %>
+        <i class="fas fa-trophy bronze"></i>
+      <% end %>
+         <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> cm<p/>
       <% end %>
     </div>
   </div>
 
   <div class="friendscards">
     <div class="friendtext">
-      <p>TOTAL WEIGHT : <% @sum_weight.first(3).each do |array| %> </p>
-         <p> <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> kg<p/>
+      <p>TOTAL WEIGHT : <% @sum_weight.first(3).each_with_index do |array, index| %> </p>
+      <p>
+      <% if index == 0 %>
+        <i class="fas fa-trophy gold"></i>
+      <% elsif index == 1 %>
+        <i class="fas fa-trophy silver"></i>
+      <% else %>
+        <i class="fas fa-trophy bronze"></i>
+      <% end %>
+         <%= image_tag array.first.profile_picture, class: "avatar-navbar" %> <%= array.first.first_name %> : <%= array.last.round(2) %> kg<p/>
       <% end %>
     </div>
   </div>
