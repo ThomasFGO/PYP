@@ -125,24 +125,24 @@ Technic.create!(technics_attributes)
 puts 'Finished!'
 
 maxou = User.create!(email: "max@gmail.com", password: "maxpyp", first_name: "Maximilien", last_name: "Strauss")
-osque = User.create!(email: "osque@gmail.com", password: "osquepyp", first_name: "Oscar", last_name: "Pyp")
-tommy = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Thomas", last_name: "Pyp")
-clarinette = User.create!(email: "clarinette@gmail.com", password: "clairepyp", first_name: "Claire", last_name: "Pyp")
+osque = User.create!(email: "osque@gmail.com", password: "osquepyp", first_name: "Oscar", last_name: "Maybon")
+tommy = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Thomas", last_name: "Morin")
+clarinette = User.create!(email: "clarinette@gmail.com", password: "clairepyp", first_name: "Céline", last_name: "Gautier")
 clairette = User.create!(email: "clarita@hotmail.fr", password: "clairette", first_name: "Claire", last_name: "Gautier")
 oscar = User.create!(email: "oscarito@gmail.com", password: "oscarito", first_name: "Oscar", last_name: "Maybon")
-sybillette = User.create!(email: "sybille@gmail.com", password: "sybillepyp", first_name: "Sybille", last_name: "Pyp")
-charlito = User.create!(email: "charlito@gmail.com", password: "charlito", first_name: "Charles", last_name: "Charlito")
-romain = User.create!(email: "romain@gmail.com", password: "romain", first_name: "Romain", last_name: "Pyp")
-nico = User.create!(email: "nico@gmail.com", password: "nicolas", first_name: "Nicolas", last_name: "Pyp")
+sybillette = User.create!(email: "sybille@gmail.com", password: "sybillepyp", first_name: "Sybille", last_name: "Cordeau")
+charlito = User.create!(email: "charlito@gmail.com", password: "charlito", first_name: "Charles", last_name: "Poniard")
+romain = User.create!(email: "romain@gmail.com", password: "romain", first_name: "Romain", last_name: "Grossard")
+nico = User.create!(email: "nico@gmail.com", password: "nicolas", first_name: "Nicolas", last_name: "Vandenbussche")
 Friendship.new(user: clarinette, friend: maxou).save
 Friendship.new(user: clarinette, friend: osque).save
-Friendship.new(user: clarinette, friend: tommy).save
+Friendship.new(user: clairette, friend: tommy).save
 Friendship.new(user: clarinette, friend: clairette).save
 Friendship.new(user: clarinette, friend: oscar).save
-Friendship.new(user: clarinette, friend: sybillette).save
-Friendship.new(user: clarinette, friend: charlito).save
-Friendship.new(user: clarinette, friend: romain).save
-Friendship.new(user: clarinette, friend: nico).save
+Friendship.new(user: clairette, friend: sybillette).save
+Friendship.new(user: clairette, friend: charlito).save
+Friendship.new(user: clairette, friend: romain).save
+Friendship.new(user: clairette, friend: nico).save
 Friendship.new(user: maxou, friend: osque).save
 Friendship.new(user: maxou, friend: osque).save
 Friendship.new(user: clairette, friend: tommy).save
@@ -152,7 +152,7 @@ Friendship.new(user: charlito, friend: clairette).save
 Friendship.new(user: tommy, friend: charlito).save
 FriendRequest.new(user: oscar, friend: clairette).save
 FriendRequest.new(user: clairette, friend: maxou).save
-FriendRequest.new(user: sybillette, friend: maxou).save
+FriendRequest.new(user: romain, friend: clairette).save
 
 
 
