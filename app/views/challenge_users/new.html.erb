@@ -15,7 +15,7 @@
     </div>
   </div>
 
-    <h3 class="title"><strong> CHALLENGERS </strong> </h3>
+    <h3 class="title"><strong> PARTICIPANTS </strong> </h3>
     <% @challenge.users.each do |user| %>
       <div class="friendscards profile-img">
         <div> <%= link_to (image_tag user.profile_picture, class: "avatar-navbar"), user_path(user) %> </div>

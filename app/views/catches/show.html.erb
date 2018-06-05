@@ -1,57 +1,72 @@
-<div class="card">
+<div class="container">
 
-  <div class="card-header">
-    <div class="profile-img">
-      <%= link_to (image_tag @catch.user.profile_picture, class: "avatar-navbar"), user_path(@catch.user) %>
-    </div>
-    <div class="profile-info">
-      <div class="user-name">
-        <%= @catch.user.first_name %> <%= @catch.user.last_name.first%>.
+  <div class="card">
+
+    <div class="card-header">
+
+      <div class="profile-img">
+        <%= link_to (image_tag @catch.user.profile_picture, class: "avatar-navbar"), user_path(@catch.user) %>
       </div>
 
-      <div class="specie"><%= @catch.specie.name %></div>
-      <% if current_user == @catch.user %>
+      <div class="profile-info">
+
+        <div class="user-name">
+          <%= @catch.user.first_name %> <%= @catch.user.last_name.first%>.
+        </div>
+
+        <div class="specie">
+          <%= @catch.specie.name %>
+        </div>
+
+        <% if current_user == @catch.user %>
         <div class="icon1">
             <%= link_to edit_catch_path(@catch) do %>
               <i class="far fa-edit"></i>
             <% end %>
-        </div>
-        <div class="icon2">
-            <%= link_to catch_path(@catch), method: :delete, data: { confirm: "Are you sure ?" }  do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
           <% end %>
         </div>
+
+        <div class="icon2">
+          <%= link_to catch_path(@catch), method: :delete, data: { confirm: "Are you sure ?" }  do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
         </div>
-    </div>
-    <div class="content-img">
-      <%= cl_image_tag @catch.photo, :width => 600, :height => 600,
-   :crop => :fill %>
-    </div>
 
-</div>
-
-  <div class="card-footer">
-    <div class="picto footer-links">
-      <div class="friendscards">
-        <ul class="list-inline">
-          <li class="time"><%= @catch.created_at.strftime("%d/%m/%Y") %></li>
-          <br>
-          <li class="coord-gps"><%=@catch.size%> cm</li>
-          <li class="coord-gps"><%=@catch.weight%> kg</li>
-          <br>
-          <li class="coord-gps">Technique : <%=@catch.technic.name%></li>
-          <br>
-          <li class="coord-gps"> GPS Coordinates : <%= @catch.latitude %> - <%= @catch.longitude %> </li>
-        </ul>
       </div>
-      <div class="friendscards">
-        <i class=> "<%= @catch.description %>" </i>
+
+      <div class="content-img">
+            <%= cl_image_tag @catch.photo, :width => 600, :height => 600, :crop => :fill %>
       </div>
+
     </div>
-</div>
 
 
+    <div class="card-footer">
+
+      <div class="picto footer-links">
+
+        <div class="friendscards">
+          <ul class="list-inline">
+            <li class="time"><%= @catch.created_at.strftime("%d/%m/%Y") %></li>
+            <br>
+            <li class="coord-gps"><%=@catch.size%> cm</li>
+            <li class="coord-gps"><%=@catch.weight%> kg</li>
+            <br>
+            <li class="coord-gps">Technique : <%=@catch.technic.name%></li>
+            <br>
+            <li class="coord-gps"> Coordonnées GPS : <%= @catch.latitude %> - <%= @catch.longitude %> </li>
+          </ul>
+        </div>
+
+        <div class="friendscards">
+          <i class=> "<%= @catch.description %>" </i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
   <div id="map"  style="width: 100%; height: 200px; " data-markers="<%= @markers.to_json %>"></div>
   <br>
@@ -63,13 +78,13 @@
     </div>
     <div id="add-review">
       <%= simple_form_for([@catch, @review], remote: true) do |f| %>
-        <%= f.input :content, method: :create, label: false, placeholder: "Type your comment"%>
-        <%= f.button :submit, "Add comment", class: "btn btn-primary" %>
+        <%= f.input :content, method: :create, label: false, placeholder: "Commentaire..."%>
+        <%= f.button :submit, "Publier", class: "btn btn-primary" %>
       <% end %>
     </div>
     <div class="edit-profile">
-      <%= link_to 'Back', :back, class: "btn btn-back" %>
+      <%= link_to 'Retour', :back, class: "btn btn-back" %>
     </div>
   </div>
-<br>
+  <br>
 </div>

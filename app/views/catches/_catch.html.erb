@@ -1,47 +1,48 @@
- <div class="card">
-    <div class="card-header">
+<div class="container">
+  <div class="card">
+      <div class="card-header">
 
-       <div class="profile-img">
-         <%= link_to (image_tag catch.user.profile_picture, class: "avatar-navbar"), user_path(catch.user) %>
-       </div>
+         <div class="profile-img">
+           <%= link_to (image_tag catch.user.profile_picture, class: "avatar-navbar"), user_path(catch.user) %>
+         </div>
 
-        <div class="profile-info">
-          <div class="user-name">
-              <%= catch.user.first_name %> <%= catch.user.last_name.first%>.
+          <div class="profile-info">
+            <div class="user-name">
+                <%= catch.user.first_name %> <%= catch.user.last_name.first%>.
+            </div>
+            <div class="specie">
+                 <%= catch.specie.name.capitalize %>
+            </div>
+            <div class="time">
+              <%= catch.created_at.strftime("%d/%m/%Y") %>
+            </div>
           </div>
-          <div class="specie">
-               <%= catch.specie.name.capitalize %>
-          </div>
-          <div class="time">
-            <%= catch.created_at.strftime("%d/%m/%Y") %>
-          </div>
-        </div>
+      </div>
+
+    <div class="content-img">
+      <% if catch.photo.present? %>
+        <% picture = catch.photo %>
+      <% elsif catch.photo.metadata %>
+        <% picture = catch.photo.metadata['public_id'] %>
+      <% else %>
+        <% picture = "http://hdimages.org/wp-content/uploads/2017/03/placeholder-image10.jpg" %>
+      <% end %>
+      <%= link_to (cl_image_tag picture, :width =>600, :height => 600,
+        :crop => :fill), catch_path(catch) %>
     </div>
 
-  <div class="content-img">
-    <% if catch.photo.present? %>
-      <% picture = catch.photo %>
-    <% elsif catch.photo.metadata %>
-      <% picture = catch.photo.metadata['public_id'] %>
-    <% else %>
-      <% picture = "http://hdimages.org/wp-content/uploads/2017/03/placeholder-image10.jpg" %>
-    <% end %>
-    <%= link_to (cl_image_tag picture, :width =>600, :height => 600,
- :crop => :fill), catch_path(catch) %>
-  </div>
-
-  <div class="card-footer">
-    <div class="friendscard">
-      <div class="link-see-more">
-        <br>
-        <div>
-          <%= link_to catch_path(catch, anchor: "add-review") do %>
-            <h6> <i class="far fa-comments"></i> Add comment </h6>
-          <% end %>
-          <%#= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
+    <div class="card-footer">
+      <div class="friendscard">
+        <div class="link-see-more">
+          <br>
+          <div>
+            <%= link_to catch_path(catch, anchor: "add-review") do %>
+              <h6> <i class="far fa-comments"></i> Commenter </h6>
+            <% end %>
+            <%#= link_to 'Add a comment', catch_path(catch, anchor: "add-review") %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

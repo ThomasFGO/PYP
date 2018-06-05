@@ -14,52 +14,58 @@ puts 'Creating species...'
 
 species_attributes = [
  {
-   name: "Barbel"
+  name: "Anguille"
  },
  {
-   name: "Bream"
- },
- {
-   name: "Carp"
- },
- {
-   name: "Squalius"
- },
- {
-   name: "Roach"
- },
- {
-  name: "Rudd"
- },
- {
-   name: "Tench"
- },
- {
-   name: "Dace"
+   name: "Barbeau"
  },
  {
    name: "Blackbass"
  },
  {
-   name: "Pike"
+   name: "Brochet"
  },
  {
-   name: "Perch"
+   name: "Brême"
  },
  {
-   name: "Zander"
+   name: "Carpe commune"
  },
  {
-   name: "Silurus"
+   name: "Carpe cuir"
  },
  {
-   name: "Rainbow trout"
+   name: "Carpe miroir"
  },
  {
-   name: "Salmon trout"
+   name: "Chevesne"
  },
  {
-   name: "Brook trout"
+   name: "Gardon"
+ },
+ {
+   name: "Perche"
+ },
+ {
+   name: "Sandre"
+ },
+ {
+   name: "Saumon de fontaine"
+ },
+ {
+   name: "Silure"
+ },
+ {
+   name: "Tanche"
+ },
+ {
+   name: "Truite arc-en-ciel"
+ },
+ {
+   name: "Truite fario"
+ },
+ {
+   name: "Vandoise"
  }
 ]
 Specie.create!(species_attributes)
@@ -69,55 +75,55 @@ puts 'Creating technics...'
 
 technics_attributes = [
  {
-   name: "Drop shot"
+   name: "Appâts naturels"
  },
  {
-   name: "Lure casting"
+   name: "Toc"
  },
  {
-   name: "Carp fishing"
+   name: "Mouche sèche"
  },
  {
-   name: "Fly fishing"
+   name: "Mouche noyée"
  },
  {
-   name: "Rock fishing"
+   name: "Streamer"
  },
  {
-  name: "Surf fishing"
+   name: "Leurre souple"
  },
  {
-   name: "Trap fishing"
+  name: "Poisson nageur"
  },
  {
-   name: "Eging"
+   name: "Leurre de surface"
  },
  {
-   name: "Drift fishing"
+   name: "Mort manié"
  },
  {
-   name: "Gillnet fishing"
+   name: "Au posé"
  },
  {
-   name: "Feeder fishing"
+   name: "Vif"
  },
  {
-   name: "Hand fishing"
+   name: "Cuiller"
  },
  {
-   name: "Ice fishing"
+   name: "Coup"
  },
  {
-   name: "Inchiku"
+   name: "À l'anglaise"
  },
  {
-   name: "Light jigging"
+   name: "Au flotteur"
  },
  {
-   name: "Live bait"
+   name: "Au feeder"
  },
  {
-   name: "Pole fishing"
+   name: "À rôder"
  }
 ]
 
@@ -125,34 +131,22 @@ Technic.create!(technics_attributes)
 puts 'Finished!'
 
 maxou = User.create!(email: "max@gmail.com", password: "maxpyp", first_name: "Maximilien", last_name: "Strauss")
-osque = User.create!(email: "osque@gmail.com", password: "osquepyp", first_name: "Oscar", last_name: "Maybon")
-tommy = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Thomas", last_name: "Morin")
-clarinette = User.create!(email: "clarinette@gmail.com", password: "clairepyp", first_name: "Céline", last_name: "Gautier")
-clairette = User.create!(email: "clarita@hotmail.fr", password: "clairette", first_name: "Claire", last_name: "Gautier")
-oscar = User.create!(email: "oscarito@gmail.com", password: "oscarito", first_name: "Oscar", last_name: "Maybon")
-sybillette = User.create!(email: "sybille@gmail.com", password: "sybillepyp", first_name: "Sybille", last_name: "Cordeau")
-charlito = User.create!(email: "charlito@gmail.com", password: "charlito", first_name: "Charles", last_name: "Poniard")
-romain = User.create!(email: "romain@gmail.com", password: "romain", first_name: "Romain", last_name: "Grossard")
-nico = User.create!(email: "nico@gmail.com", password: "nicolas", first_name: "Nicolas", last_name: "Vandenbussche")
-Friendship.new(user: clarinette, friend: maxou).save
-Friendship.new(user: clarinette, friend: osque).save
-Friendship.new(user: clairette, friend: tommy).save
-Friendship.new(user: clarinette, friend: clairette).save
-Friendship.new(user: clarinette, friend: oscar).save
-Friendship.new(user: clairette, friend: sybillette).save
-Friendship.new(user: clairette, friend: charlito).save
-Friendship.new(user: clairette, friend: romain).save
-Friendship.new(user: clairette, friend: nico).save
-Friendship.new(user: maxou, friend: osque).save
-Friendship.new(user: maxou, friend: osque).save
-Friendship.new(user: clairette, friend: tommy).save
-Friendship.new(user: clairette, friend: sybillette).save
-Friendship.new(user: tommy, friend: osque).save
-Friendship.new(user: charlito, friend: clairette).save
-Friendship.new(user: tommy, friend: charlito).save
-FriendRequest.new(user: oscar, friend: clairette).save
-FriendRequest.new(user: clairette, friend: maxou).save
-FriendRequest.new(user: romain, friend: clairette).save
+tommy = User.create!(email: "tommy@gmail.com", password: "tommypyp", first_name: "Thomas", last_name: "Morin")
+florian = User.create!(email: "florian@gmail.com", password: "florianpyp", first_name: "Florian", last_name: "Cauchois")
+tom = User.create!(email: "tom@gmail.com", password: "tompyp", first_name: "Thomas", last_name: "Roy")
+marc = User.create!(email: "marc@gmail.com", password: "marcpyp", first_name: "Marc", last_name: "Millieroux")
+
+
+Friendship.new(user: maxou, friend: tommy).save
+Friendship.new(user: maxou, friend: florian).save
+Friendship.new(user: maxou, friend: tom).save
+Friendship.new(user: maxou, friend: marc).save
+Friendship.new(user: tommy, friend: florian).save
+Friendship.new(user: tommy, friend: tom).save
+Friendship.new(user: tommy, friend: marc).save
+Friendship.new(user: florian, friend: tom).save
+Friendship.new(user: florian, friend: marc).save
+Friendship.new(user: tom, friend: marc).save
 
 
 
@@ -161,100 +155,40 @@ FriendRequest.new(user: romain, friend: clairette).save
 puts 'Creating catches...'
 catches_attributes = [
   {
-    user: osque,
-    specie: Specie.find_by(name: "Carp"),
+    user: maxou,
+    specie: Specie.find_by(name: "Perche"),
+    size: 45,
+    weight: 1.5,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/lxR1VSW.jpg",
+    description: "NIght fishing with my friends!",
+    technic: Technic.find_by(name: "Leurre souple"),
+    latitude: 46.63001,
+    longitude: 0.36613
+  },
+  {
+    user: maxou,
+    specie: Specie.find_by(name: "Perche"),
+    size: 44,
+    weight: 1.4,
+    date:Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/n7m4KyT.jpg",
+    description: "I am glad I woke up at 6am to fish this beauty",
+    technic: Technic.find_by(name: "Leurre souple"),
+    latitude: 46.72532,
+    longitude: 0.44212
+  },
+  {
+    user: florian,
+    specie: Specie.find_by(name: "Carpe commune"),
     size: 66,
     weight: 6.7,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/qsf6T0G.png",
     description: "Fishing day is always a good day",
-    technic: Technic.find_by(name: "Drop shot"),
-    latitude: 45.66097,
-    longitude: 0.09973
-  },
-  {
-    user: romain,
-    specie: Specie.find_by(name: "Carp"),
-    size: 66,
-    weight: 6.7,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/qsf6T0G.png",
-    description: "Love fishing at sunrise: best views best catches",
-    technic: Technic.find_by(name: "Drop shot"),
-    latitude: 45.66097,
-    longitude: 0.09973
-  },
-  {
-    user: romain,
-    specie: Specie.find_by(name: "Roach"),
-    size: 112,
-    weight: 9.7,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/OCZiDLO.png",
-    description: "Bad day but good catch",
-    technic: Technic.find_by(name: "Lure casting"),
-    latitude: 45.66097,
-    longitude: 0.09973
-  },
-  {
-    user: nico,
-    specie: Specie.find_by(name: "Brook trout"),
-    size: 23,
-    weight: 2.1,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/qsf6T0G.png",
-    description: "Small brook trout, easy fight",
-    technic: Technic.find_by(name: "Feeder fishing"),
-    latitude: 45.66097,
-    longitude: 0.09973
-  },
-  {
-    user: nico,
-    specie: Specie.find_by(name: "Blackbass"),
-    size: 78,
-    weight: 4.3,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/qsf6T0G.png",
-    description: "Fishing day for my first day of holidays!!! So good to be back at it!",
-    technic: Technic.find_by(name: "Hand fishing"),
-    latitude: 45.66097,
-    longitude: 0.09973
-  },
-  {
-    user: osque,
-    specie: Specie.find_by(name: "Carp"),
-    size: 64,
-    weight: 6.1,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/miFV9I3.png",
-    description: "First time I get a Carp so proud",
-    technic: Technic.find_by(name: "Drop shot"),
-    latitude: 45.66071,
-    longitude: 0.10011
-  },
-  {
-    user: osque,
-    specie: Specie.find_by(name: "Roach"),
-    size: 89,
-    weight: 2.1,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/k4v2GHd.png",
-    description: "Biggest fish I got so far!! The season is starting well :)",
-    technic: Technic.find_by(name: "Lure casting"),
-    latitude: 45.89344,
-    longitude: 0.24371
-  },
-  {
-    user: tommy,
-    specie: Specie.find_by(name: "Bream"),
-    size: 65,
-    weight: 2.1,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/Di3eASM.png",
-    description: "Female bream, good catch but too much noise around, I had to wait a lot",
-    technic: Technic.find_by(name: "Light jigging"),
-    latitude: 45.66016,
-    longitude: 0.10048
+    technic: Technic.find_by(name: "Au feeder"),
+    latitude: 45.68324,
+    longitude: 0.15268
   },
   {
     user: tommy,
@@ -263,166 +197,154 @@ catches_attributes = [
     weight: 0.2,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/OCZiDLO.png",
-    description: "Only catch of the day, a bit disapointed.. Hope tomorrow is going to be a better day",
-    technic: Technic.find_by(name: "Light jigging"),
-    latitude: 45.66133,
-    longitude: 0.09995
+    description: "Bad day but good catch",
+    technic: Technic.find_by(name: "Leurre souple"),
+    latitude: 45.68551,
+    longitude: 0.15434
+  },
+  {
+    user: florian,
+    specie: Specie.find_by(name: "Carpe commune"),
+    size: 64,
+    weight: 6.1,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/miFV9I3.png",
+    description: "First time I get a Carp so proud",
+    technic: Technic.find_by(name: "Au flotteur"),
+    latitude: 45.68381,
+    longitude: 0.15304
+  },
+  {
+    user: florian,
+    specie: Specie.find_by(name: "Truite fario"),
+    size: 89,
+    weight: 2.1,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/k4v2GHd.png",
+    description: "Biggest fish I got so far!! The season is starting well :)",
+    technic: Technic.find_by(name: "Cuiller"),
+    latitude: 45.66331,
+    longitude: 0.24219
   },
   {
     user: tommy,
-    specie: Specie.find_by(name: "Roach"),
+    specie: Specie.find_by(name: "Brochet"),
+    size: 65,
+    weight: 2.1,
+    date: Date.new(2018,05,15),
+    remote_photo_url: "https://imgur.com/Di3eASM.png",
+    description: "Nice pike, good catch but too much noise around, I had to wait a lot",
+    technic: Technic.find_by(name: "Poisson nageur"),
+    latitude: 45.89344,
+    longitude: 0.24371
+  },
+  {
+    user: tommy,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 72,
     weight: 4.8,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/Cb6EORY.png",
     description: "The Fat French Trout",
-    technic: Technic.find_by(name: "Feeder fishing"),
-    latitude: 45.66076,
-    longitude: 0.10005
+    technic: Technic.find_by(name: "Appâts naturels"),
+    latitude: 45.66385,
+    longitude: 0.24298
   },
   {
-    user: sybillette,
-    specie: Specie.find_by(name: "Bream"),
+    user: marc,
+    specie: Specie.find_by(name: "Brochet"),
     size: 116,
     weight: 10.1,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/nQsYRdB.jpg",
     description: "Monster Pike",
-    technic: Technic.find_by(name: "Fly fishing"),
-    latitude: 45.6633,
-    longitude: 0.24107
+    technic: Technic.find_by(name: "Streamer"),
+    latitude: 45.62844,
+    longitude: -0.01783
   },
   {
-    user: sybillette,
-    specie: Specie.find_by(name: "Squalius"),
+    user: marc,
+    specie: Specie.find_by(name: "Sandre"),
     size: 76,
     weight: 9.5,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/VXtbM5L.jpg",
-    description: "The season is starting, finally!!!",
-    technic: Technic.find_by(name: "Fly fishing"),
-    latitude: 45.66487,
-    longitude: 0.24087
+    description: "Sandre du soir, bonsoir",
+    technic: Technic.find_by(name: "Streamer"),
+    latitude: 45.79631,
+    longitude: 0.06745
   },
   {
-    user: sybillette,
-    specie: Specie.find_by(name: "Bream"),
-    size: 86,
-    weight: 7.1,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/VXtbM5L.jpg",
-    description: "Sandre du soir",
-    technic: Technic.find_by(name: "Lure casting"),
-    latitude: 45.66487,
-    longitude: 0.24087
-  },
-  {
-    user: clairette,
-    specie: Specie.find_by(name: "Roach"),
+    user: marc,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 56,
     weight: 2.1,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/41xHSxS.jpg",
     description: "The French Trout",
-    technic: Technic.find_by(name: "Hand fishing"),
-    latitude: 45.67578,
-    longitude: 0.23625
+    technic: Technic.find_by(name: "Mouche noyée"),
+    latitude: 45.68117,
+    longitude: 0.20924
   },
   {
-    user: clairette,
+    user: marc,
     specie: Specie.find_by(name: "Blackbass"),
     size: 43,
     weight: 1.7,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/EeypleC.jpg",
     description: "BigBlackBass",
-    technic: Technic.find_by(name: "Fly fishing"),
-    latitude: 45.67572,
-    longitude: 0.23386
+    technic: Technic.find_by(name: "Streamer"),
+    latitude: 43.77022,
+    longitude: -0.97907
   },
   {
-    user: clairette,
-    specie: Specie.find_by(name: "Roach"),
+    user: tom,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 49,
     weight: 1.7,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/CGF57cZ.png",
     description: "The Trout of The Touvre",
-    technic: Technic.find_by(name: "Hand fishing"),
-    latitude: 45.67599,
-    longitude: 0.23298
+    technic: Technic.find_by(name: "Leurre de surface"),
+    latitude: 45.66305,
+    longitude: 0.24251
   },
   {
-    user: clarinette,
-    specie: Specie.find_by(name: "Roach"),
+    user: tom,
+    specie: Specie.find_by(name: "Truite fario"),
     size: 48,
     weight: 1.7,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/uj3sDEy.jpg",
     description: "Number 2",
-    technic: Technic.find_by(name: "Hand fishing"),
-    latitude: 45.67915,
-    longitude: 0.20351
+    technic: Technic.find_by(name: "Poisson nageur"),
+    latitude: 45.66315,
+    longitude: 0.24256
   },
   {
-    user: clarinette,
-    specie: Specie.find_by(name: "Perch"),
+    user: tom,
+    specie: Specie.find_by(name: "Perche"),
     size: 23,
     weight: 0.2,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/1K8DocB.jpg",
     description: "Little Perch",
-    technic: Technic.find_by(name: "Hand fishing"),
-    latitude: 45.68702,
-    longitude: 0.15531
+    technic: Technic.find_by(name: "Poisson nageur"),
+    latitude: 45.65408,
+    longitude: 0.15721
   },
   {
-    user: maxou,
-    specie: Specie.find_by(name: "Perch"),
-    size: 45,
-    weight: 1.5,
-    date: Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/lxR1VSW.jpg",
-    description: "NIght fishing with my friends!",
-    technic: Technic.find_by(name: "Feeder fishing"),
-    latitude: 45.68513,
-    longitude: 0.1541
-  },
-  {
-    user: maxou,
-    specie: Specie.find_by(name: "Perch"),
-    size: 44,
-    weight: 1.4,
-    date:Date.new(2018,05,15),
-    remote_photo_url: "https://imgur.com/n7m4KyT.jpg",
-    description: "I am glad I woke up at 6am to fish this beauty",
-    technic: Technic.find_by(name: "Light jigging"),
-    latitude: 45.69158,
-    longitude: 0.15234
-  },
-  {
-    user: charlito,
-    specie: Specie.find_by(name: "Roach"),
+    user: tom,
+    specie: Specie.find_by(name: "Perche"),
     size: 24,
     weight: 0.2,
     date: Date.new(2018,05,15),
     remote_photo_url: "https://imgur.com/qJIOPyy.jpg",
     description: "Nice catch on a sunny afternoon with my friend",
-    technic: Technic.find_by(name: "Lure casting"),
-    latitude: 45.87617,
-    longitude: 0.20698
-  },
-  {
-    user: charlito,
-    specie: Specie.find_by(name: "Silurus"),
-    size: 29,
-    weight: 3.12,
-    date: Date.new(2018,05,30),
-    remote_photo_url: "https://imgur.com/qJIOPyy.jpg",
-    description: "Intense fight to get this Silurus, but it was worth it!",
-    technic: Technic.find_by(name: "Surf fishing"),
-    latitude: 45.87617,
-    longitude: 0.20698
+    technic: Technic.find_by(name: "Leurre de surface"),
+    latitude: 45.66332,
+    longitude: 0.12312
   }
 ]
 
