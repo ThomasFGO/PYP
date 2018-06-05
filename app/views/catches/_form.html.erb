@@ -1,8 +1,8 @@
 <%= simple_form_for(@catch) do |f| %>
-  <%= f.association :specie, label: "Specie *", include_blank: "Choose a specie" %>
+  <%= f.association :specie, label: "Espèce *", include_blank: "Sélectionner une espèce" %>
   <%= f.label :photo do %>
     <div class="btn-form-div">
-      <span class="btn btn-default">Add a picture</span>
+      <span class="btn btn-default">Ajouter une photo</span>
     </div>
     <% if @catch.errors.messages[:photo].present? %>
       Photo <%= @catch.errors.messages[:photo].join(', ') %>
@@ -12,16 +12,16 @@
     <%= f.input :photo, required: true, label: false %>
   </div>
   <div class="image-background-preview">
-  <img id="image-preview" src="#" alt="Waiting for your image"
+  <img id="image-preview" src="#" alt="Photo ?"
     style="width: 100%; height: 100px; object-fit: contain; background: white;" />
   </div>
   <br>
   <div class="inline-form">
-    <div class="form-item"> <%= f.input :size, placeholder: "cm" %> </div>
-    <div class="form-item"> <%= f.input :weight, placeholder: "kg" %> </div>
+    <div class="form-item"> <%= f.input :size, label: "Taille", placeholder: "cm" %> </div>
+    <div class="form-item"> <%= f.input :weight, label: "Poids", placeholder: "kg" %> </div>
   </div>
-  <%= f.association :technic, label: "Technique *", include_blank: "Choose a technique"%>
-  <%= f.input :description, placeholder: "Add details"%>
+  <%= f.association :technic, label: "Technique *", include_blank: "Sélectionner une technique"%>
+  <%= f.input :description, label: "Détails", placeholder: "..."%>
   <%= f.input :latitude, as: :hidden %>
   <%= f.input :longitude, as: :hidden %>
   <%= f.input :created_at, as: :hidden %>
@@ -29,8 +29,8 @@
     <div class="catch-map-preview"> </div>
   <% end %>
   <br>
-  <%= f.button :submit, "Add catch", class: "btn btn-primary"  %>
+  <%= f.button :submit, "Valider", class: "btn btn-primary"  %>
   <br>
   <br>
-  <%= link_to 'Back', :back, class: "btn btn-back" %>
+  <%= link_to 'Retour', :back, class: "btn btn-back" %>
 <% end %>

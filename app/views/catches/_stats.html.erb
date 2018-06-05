@@ -1,39 +1,41 @@
-<div class="stats">
+<div class="container">
+  <div class="stats">
 
-  <h3 class="title"><strong>BEST FISH (cm)</strong></h3>
-  <div class="friendscards">
-    <div class="friendstext">
-    <%= @maximum%>
-    </div>
-  </div>
-
-
-  <h3 class="title"><strong>TOTAL CATCHES</strong></h3>
-  <div class="friendscards">
-    <div class="friendstext">
-    <%= @count_total %>
-    </div>
-  </div>
-
-  <h3 class="title"><strong>AVERAGE SIZE (cm)</strong></h3>
+    <h3 class="title"><strong>POISSON RECORD (cm)</strong></h3>
     <div class="friendscards">
       <div class="friendstext">
-      <%= @average %>
-      </div>
-  </div>
-
-  <h3 class="title"><strong>TOTAL SIZE (cm)</strong></h3>
-    <div class="friendscards">
-      <div class="friendstext">
-      <%= @sum_size %>
+      <%= @maximum%>
       </div>
     </div>
 
-  <h3 class="title"><strong>TOTAL WEIGHT (kg)</strong></h3>
+
+    <h3 class="title"><strong>NOMBRE TOTAL</strong></h3>
     <div class="friendscards">
       <div class="friendstext">
-      <%= @sum_weight %>
+      <%= @count_total %>
       </div>
     </div>
 
+    <h3 class="title"><strong>TAILLE MOYENNE (cm)</strong></h3>
+      <div class="friendscards">
+        <div class="friendstext">
+        <%= @average %>
+        </div>
+    </div>
+
+    <h3 class="title"><strong>TAILLE CUMULÉE (cm)</strong></h3>
+      <div class="friendscards">
+        <div class="friendstext">
+        <%= @sum_size %>
+        </div>
+      </div>
+
+    <h3 class="title"><strong>POIDS CUMULÉ (kg)</strong></h3>
+      <div class="friendscards">
+        <div class="friendstext">
+        <%= @sum_weight %>
+        </div>
+      </div>
+
+  </div>
 </div>
