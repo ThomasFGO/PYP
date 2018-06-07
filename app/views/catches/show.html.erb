@@ -1,5 +1,5 @@
-<div class="container">
-
+<!-- <div class="container">
+ -->
   <div class="card">
 
     <div class="card-header">
@@ -23,7 +23,6 @@
             <%= link_to edit_catch_path(@catch) do %>
               <i class="far fa-edit"></i>
             <% end %>
-          <% end %>
         </div>
 
         <div class="icon2">
@@ -31,15 +30,15 @@
             <i class="far fa-trash-alt"></i>
           <% end %>
         </div>
+        <% end %>
 
-      </div>
-
-      <div class="content-img">
-            <%= cl_image_tag @catch.photo, :width => 600, :height => 600, :crop => :fill %>
       </div>
 
     </div>
 
+    <div class="content-img">
+      <%= cl_image_tag @catch.photo, :width => 600, :height => 600, :crop => :fill %>
+    </div>
 
     <div class="card-footer">
 
@@ -79,7 +78,7 @@
     <div id="add-review">
       <%= simple_form_for([@catch, @review], remote: true) do |f| %>
         <%= f.input :content, method: :create, label: false, placeholder: "Commentaire..."%>
-        <%= f.button :submit, "Publier", class: "btn btn-primary" %>
+        <%= f.button :submit, "Commenter", class: "btn btn-primary" %>
       <% end %>
     </div>
     <div class="edit-profile">
@@ -87,4 +86,5 @@
     </div>
   </div>
   <br>
-</div>
+<!-- </div>
+ -->
