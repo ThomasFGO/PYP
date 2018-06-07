@@ -25,16 +25,16 @@
     <% end %>
   <%= simple_form_for([@challenge, @challenge_user]) do |f| %>
     <div class="challenge-form">
-      <div> <%= f.association :user, required: true, label: "", collection: @friends_to_add, include_blank: "Add friends", label_method: :full_name %> </div>
-      <div> <%= f.submit "Add", class: "btn btn-add" %> </div>
+      <div> <%= f.association :user, required: true, label: "", collection: @friends_to_add, include_blank: "Ajouter un ami", label_method: :full_name %> </div>
+      <div> <%= f.submit "Ajouter", class: "btn btn-add" %> </div>
     </div>
   <% end %>
   <br>
   <div>
-    <%= link_to "Confirm", challenge_path(@challenge), class: "btn btn-primary" %>
+    <%= link_to "Confirmer", challenge_path(@challenge), class: "btn btn-primary" %>
     <br>
     <br>
-    <%= link_to 'Back to challenges', challenges_path, class: "btn btn-back" %>
+    <%= link_to 'Retour', challenges_path, class: "btn btn-back" %>
 
   </div>
 </div>
