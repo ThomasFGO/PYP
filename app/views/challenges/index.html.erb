@@ -17,8 +17,8 @@
   <div>
     <%= simple_form_for(@challenge) do |f| %>
       <%= f.input :name, label: "Titre", placeholder: "Titre"%>
-      <%= f.input :start_at, as: :date, html5: true, label: "Début", input_html: {class: "datepicker"}  %>
-      <%= f.input :end_at, as: :date, html5: true, label: "Fin", input_html: {class: "datepicker"} %>
+      <%= f.input :start_at, as: :date, html5: true, label: "Début"  %>
+      <%= f.input :end_at, as: :date, html5: true, label: "Fin" %>
       <%= f.submit "Valider", class: "btn btn-success" %>
       <br>
       <br>
